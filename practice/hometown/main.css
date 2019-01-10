@@ -1,0 +1,49 @@
+body {
+    background: rgba(4,68,68,1);
+background: -moz-linear-gradient(left, rgba(4,68,68,1) 0%, rgba(6,104,104,1) 68%, rgba(6,115,115,1) 88%);
+background: -webkit-gradient(left top, right top, color-stop(0%, rgba(4,68,68,1)), color-stop(68%, rgba(6,104,104,1)), color-stop(88%, rgba(6,115,115,1)));
+background: -webkit-linear-gradient(left, rgba(4,68,68,1) 0%, rgba(6,104,104,1) 68%, rgba(6,115,115,1) 88%);
+background: -o-linear-gradient(left, rgba(4,68,68,1) 0%, rgba(6,104,104,1) 68%, rgba(6,115,115,1) 88%);
+background: -ms-linear-gradient(left, rgba(4,68,68,1) 0%, rgba(6,104,104,1) 68%, rgba(6,115,115,1) 88%);
+background: linear-gradient(to right, rgba(4,68,68,1) 0%, rgba(6,104,104,1) 68%, rgba(6,115,115,1) 88%);
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#044444', endColorstr='#067373', GradientType=1 );
+color: #fff;
+}
+article {
+    text-align: center;
+    margin: auto;
+    width: 80%;
+}
+section {
+    text-align: center;
+}
+
+h1 {
+    font-family: 'Libre Franklin', sans-serif;
+    text-transform: uppercase;
+}
+
+article p {
+    font-family: 'Roboto', sans-serif;
+}
+
+article img {
+    width: 100%;
+}
+
+ul {
+    list-style: none;
+}
+
+ul li {
+    padding: .5rem 0;
+}
+ul a {
+    color: rgba(255, 245, 253, .5);
+    text-decoration: none;
+}
+
+ul a:hover {
+    color: #fff;
+}
+

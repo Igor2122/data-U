@@ -1,0 +1,15 @@
+.artcles article>h2 {
+    text-align: center;
+}
+article {
+    width: 80%;
+    margin: auto;
+    border: 1px pink solid;
+    padding: 2%;
+    margin: 2%;
+}
+h1 {
+    text-align: center;
+    padding-bottom: 5%;
+    color: salmon;
+}
