@@ -1,0 +1,54 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    position: relative;
+}
+
+.main {
+    position: relative;
+    height: 100vh;
+    background: #edd1cb;;
+}
+
+.line-top {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    opacity: .8;
+}
+
+.main-img {
+    position: absolute;
+    height: 60%;
+    top: 20%;
+    right: 10%;
+}
+
+.main-tagline {
+    position: absolute;
+    left: 20%;
+    top: 40%;
+}
+
+h1 {
+    font-family: 'Coiny', cursive;
+    font-size: 3em;
+    color: #f95950;
+}
+
+.main-tagline p {
+    font-family: 'Montserrat', sans-serif;
+}
+
+.main-button {
+    height: 3em;
+    padding: 1em;
+    margin: 1em;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1em;
+    color: #371d31;
+    border: 1px solid #371d31;
+    border-radius: 5%;
+
+}

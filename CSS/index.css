@@ -1,0 +1,29 @@
+ul li:nth-child(2):hover{
+    color: red;
+}
+
+
+.border {
+    border:  1px red double;
+    height: 100px;
+    width: 100px;
+    display: flex;
+    align-items: center;
+}
+.border h1 {
+    margin: auto;
+}
+.border {
+    border-radius: 10px;
+    border-color: red green salmon blue;
+}
+
+.section {
+    height: 50vh;
+    background: red url('https://images.unsplash.com/photo-1546984575-757f4f7c13cf?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60');
+    background-size: cover;
+    background-repeat:  no-repeat;
+    /* background-attachment: fixed; */
+    background-position: left bottom;
+    background-position: 50px 50px;
+}
