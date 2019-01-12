@@ -1,0 +1,40 @@
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-size: 24px;
+}
+
+body,
+html {
+  height: 100vh;
+  background: #d4d7db;
+}
+
+nav {
+  background: #005dff;
+}
+
+nav ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 2em;
+  width: 60%;
+  margin: auto;
+}
+
+nav ul li {
+  text-transform: capitalize;
+  list-style: none;
+  font-family: "Montserrat";
+  color: #fff;
+  font-size: 1.4em;
+}
+/*# sourceMappingURL=main.css.map */

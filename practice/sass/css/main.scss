@@ -1,0 +1,50 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-size: 24px;
+}
+
+$colors: (
+    bodyColorMain: #d4d7db,
+    navColor: #005dff,
+    linkButtons: #fff,
+);
+
+$fonts: (
+    headers: 'Montserrat',
+    secondary: 'Raleway', 
+);
+
+
+$linkSize: 1.4em;
+
+
+body,
+html {
+    height: 100vh;
+    background: map-get($colors, bodyColorMain);
+    
+}
+
+nav {
+    background: map-get($colors, navColor);
+
+    ul {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        height: 2em;
+        width: 60%;
+        margin: auto;
+
+        li {
+            text-transform: capitalize;
+            list-style: none;
+            font-family: map-get($fonts, headers);
+            color: map-get($colors, linkButtons);
+            font-size: $linkSize;
+        }
+    }
+
+}
