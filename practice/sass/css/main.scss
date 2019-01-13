@@ -1,40 +1,92 @@
 * {
-    margin: 0;
-    padding: 0;
     box-sizing: border-box;
     font-size: 24px;
 }
 
-$colors: (
-    bodyColorMain: #d4d7db,
-    navColor: #005dff,
-    linkButtons: #fff,
+$colors: (main: #005dff,
+navColor: #d4d7db,
+linkButtons: #fff,
 );
 
-$fonts: (
-    headers: 'Montserrat',
-    secondary: 'Raleway', 
-);
+@function mapGet ($property, $value) {
+    @return map-get($property, $value)
+}
 
+
+$fonts: (headers: 'Montserrat',
+secondary: 'Raleway',
+);
 
 $linkSize: 1.4em;
+$padding: 2em;
+// Defining mixins for resposisve design
 
+$desktop: 840px;
+
+@mixin desktop {
+    @media(min-width: #{$desktop}) {
+        @content;
+    }
+}
 
 body,
 html {
+    margin: 0;
     height: 100vh;
-    background: map-get($colors, bodyColorMain);
-    
+
+    .polygon {
+        clip-path: polygon(100% 0, 100% 78%, 56% 100%, 0 100%, 0 0);
+        height: 100%;
+        width: 100%;
+        background: mapGet($colors, main);
+        position: absolute;
+        z-index: -1;
+    }
+
+
+
 }
+
+main {
+
+    article {
+        width: 90%;
+        margin: auto;
+
+        @include desktop {
+            width: 33%;
+        }
+
+        h2 {
+            color: antiquewhite;
+            padding: $padding;
+            font-family: mapGet($fonts, headers);
+        }
+    }
+
+
+    @include desktop {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+        height: 100%;
+    }
+}
+
+
 
 nav {
     background: map-get($colors, navColor);
+    padding: 200px, 200px;
+
 
     ul {
         display: flex;
         justify-content: space-around;
+        flex-wrap: wrap;
         align-items: center;
-        height: 2em;
+        height: auto;
         width: 60%;
         margin: auto;
 
