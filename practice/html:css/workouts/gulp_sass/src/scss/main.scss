@@ -1,0 +1,44 @@
+$colors: (main: red,
+secondary: purple,
+third: #fff,
+);
+
+@function doSmt ($input, $value) {
+    @return map-get($input, $value);
+}
+
+
+@mixin flex {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    background: doSmt($colors, secondary);
+}
+
+body {
+    color: doSmt($colors, third);
+    background: pink;
+
+    .content {
+        @include flex;
+
+        p {
+            width: 33%;
+        }
+    }
+}
+
+nav {
+    li {
+        .alert {
+            &-error {
+                color: red;
+            }
+
+            &-noerror {
+                color: #fff;
+            }
+        }
+    }
+}
