@@ -1,0 +1,11 @@
+#Ignored files
+.DS_Store
+.Spotlight-V100
+.Trashes
+._*
+
+#Node.js modules
+node_modules/
+
+#Project build
+dist
