@@ -2,6 +2,7 @@
 @import 'nav_jumbotrn/_nav';
 @import 'nav_jumbotrn/_jumbotrn';
 @import 'plot/plot';
+@import 'charachters/charachters';
 
 body,
 html,
@@ -9,6 +10,15 @@ html,
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+}
+
+h2 {
+    color: render($colors, headers);
+    font-family: render($fonts, main);
+    font-size: 150%;
+    padding-top: 50px;
+    font-size: 3em;
+    text-transform: capitalize;
 }
 
 

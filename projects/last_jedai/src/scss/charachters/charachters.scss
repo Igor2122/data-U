@@ -1,0 +1,59 @@
+@import '../common/base';
+
+.charachters {
+    height: 500px;
+    background: url('../img/rey-standing.jpg');
+    background-position: center;
+    background-size: cover;
+    text-align: center;
+
+    .img-icons {
+        @include flex;
+        align-items: flex-end;
+        height: 75%;
+        width: 60%;
+        margin: auto;
+        
+        .wraper {
+            @include flex;
+            align-items: center;
+            width: 90%;
+        }
+        .img {
+            background-size: contain;
+            border-radius: 100%;
+            overflow: hidden;
+            height: 100%;
+
+            img {
+                height: 100%;
+            }
+        }
+
+        .img {
+            &-lg {
+                height: 130px;
+                width: 130px
+            }
+
+            &-2 {
+                height: 115px;
+                width: 115px
+            }
+
+            &-1 {
+                height: 100px;
+                width: 100px
+            }
+
+            &-sm {
+                height: 75px;
+                width: 75px
+            }
+        }
+
+    }
+
+
+
+}

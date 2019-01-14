@@ -1,30 +1,30 @@
+@import '../common/base';
+
 .plot {
     height: 480px;
     width: 100%;
     text-align: center;
 
     h2 {
-        font-family: render($fonts, main);
-        font-size: 150%;
-        margin: 5% auto;
+        color: black;
 
     }
-    
+
     .plot-content {
         @include centerDiv;
-        // @include flex;
         flex-direction: row;
-        // padding: 0 10%;
 
         img {
             float: left;
             width: 220px
         }
-        .text   {
+
+        .text {
             overflow: hidden;
             margin-left: 250px;
             text-align: left;
-        } 
+        }
+
         h3 {
             margin-top: 30px;
         }
