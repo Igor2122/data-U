@@ -3,4 +3,34 @@
 .ratings {
     height: 500px;
     @include centerDiv;
+
+    .ratings-charts {
+        @include flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: flex-end;
+        margin: 30px 0;
+
+        div .lmdv,
+        .rotentomatos,
+        .metactric {
+            width: 200px;
+            background: pink;
+            align-self: flex-end;
+        }
+
+
+        div .lmdv {
+            height: 200px;
+
+        }
+
+        div .rotentomatos {
+            height: 290px;
+        }
+
+        div .metactric {
+            height: 285px;
+        }
+    }
 }
