@@ -1,0 +1,12 @@
+@import '../common/base';
+
+.gallery {
+    @include sectionBase;
+    height: 500px;
+
+    .img-slider {
+        height: 520px;
+        background: url('../img/gallery.jpg');
+        background-size: cover;
+    }
+}
