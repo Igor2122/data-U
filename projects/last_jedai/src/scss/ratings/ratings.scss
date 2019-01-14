@@ -1,0 +1,6 @@
+@import '../common/functions';
+
+.ratings {
+    height: 500px;
+    @include centerDiv;
+}
