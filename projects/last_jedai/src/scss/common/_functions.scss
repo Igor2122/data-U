@@ -13,3 +13,8 @@
     margin: auto;
     text-align: center;
 }
+
+@mixin sectionBase {
+    height: 500px;
+    text-align: center;
+}

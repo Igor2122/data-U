@@ -7,7 +7,7 @@
     .ratings-charts {
         @include flex;
         flex-direction: row;
-        justify-content: space-around;
+        justify-content: space-between;
         align-items: flex-end;
         margin: 30px 0;
 

@@ -1,0 +1,49 @@
+@import '../common/base';
+
+.cast {
+    @include sectionBase;
+    @include centerDiv;
+
+
+    .active-view img {
+        float: left;
+        padding-right: 30px;
+    }
+
+    .bio {
+        text-align: left;
+        padding-top: 100px;
+
+        p {
+            padding-top: 1em;
+            line-height: 1.6em;
+        }
+    }
+
+    .actors-list {
+
+        @include flex;
+        flex-direction: row;
+        justify-content: space-between;
+        width: 100%;
+        
+        .acor-img-card {
+            width: 10%;
+            position: relative;
+        }
+
+        img {
+            height: 200px;
+        }
+
+        .actor-name {
+            position: absolute;
+            width: 100%;
+            bottom: 0;
+            padding: 5% 0;
+            background: rgba(255, 255, 255, .7)   
+        }
+    }
+
+
+}
