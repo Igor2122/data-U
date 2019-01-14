@@ -1,0 +1,11 @@
+@function render ($props, $val){
+    @return map-get($props, $val);
+}
+
+@mixin flex {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+

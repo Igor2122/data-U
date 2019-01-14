@@ -1,0 +1,59 @@
+@import 'common/base';
+
+body,
+html,
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+nav {
+    height: 10vh;
+    background: render($colors, secondary);
+
+    ul {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+        @include flex;
+        width: 60%;
+        align-items: center;
+
+        li {
+            list-style: none;
+
+            a {
+                text-decoration: none;
+                font-family: render($fonts, secondary);
+                color: render($colors, links);
+                font-size: 1.2em;
+            }
+        }
+    }
+}
+
+.jumbo {
+    height:  300px;
+    @include flex;
+    align-items: center;
+    background: url('../img/welcome.jpg');
+    background-position: center;
+
+    .main-text {
+        color: render($colors, links);
+        text-align: center;
+        text-transform: capitalize;
+
+        h1 {
+            font-family: render($fonts, main);
+            font-size: 400%;
+        }
+        
+        p {
+            font-family: render($fonts, secondary);
+            font-size: 150%;
+            opacity: .6;
+        }
+    }
+}
