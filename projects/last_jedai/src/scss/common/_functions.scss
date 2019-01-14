@@ -8,4 +8,8 @@
     justify-content: space-around;
 }
 
-
+@mixin centerDiv {
+    width: 800px;
+    margin: auto;
+    text-align: center;
+}
