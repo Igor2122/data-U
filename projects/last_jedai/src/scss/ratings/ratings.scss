@@ -1,4 +1,4 @@
-@import '../common/functions';
+@import '../common/base';
 
 .ratings {
     height: 500px;
@@ -15,7 +15,7 @@
         .rotentomatos,
         .metactric {
             width: 200px;
-            background: pink;
+            background: render($colors, main);
             align-self: flex-end;
         }
 
