@@ -1,0 +1,10 @@
+
+
+
+$moile: 400px;
+
+@mixin mobile {
+    @media(max-width: #{$moile}) {
+        @content;
+    }
+}

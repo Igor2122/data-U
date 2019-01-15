@@ -1,0 +1,147 @@
+@import './mixins';
+
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    font-family: 'Exo', sans-serif;
+    font-size: 18px;
+}
+
+body {
+    background-color: #F2F2F2;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 1rem auto;
+
+    @include mobile {
+        display: flex;
+        flex-direction: column;
+        width: 100vw;
+
+        header,
+        nav {
+            width: 100%;
+        }
+
+
+    }
+
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    @include mobile {
+        flex-direction: column;
+
+        :nth-child(2) {
+            order: -1;
+        }
+    }
+
+}
+
+.logo {
+    width: 100px;
+    height: 100px;
+}
+
+h1 {
+    color: #F4A423;
+
+    font-weight: 900;
+    font-size: 3rem;
+}
+
+nav {
+    padding-left: 2rem;
+
+    background-color: #435058;
+    border-radius: 4px;
+}
+
+nav a {
+    display: inline;
+
+    margin-right: 2rem;
+
+    color: white;
+
+    font-weight: bold;
+    text-decoration: none;
+    line-height: 3rem;
+}
+
+nav a:hover {
+    color: #F4A423;
+    border-bottom: 2px solid #F4A423;
+}
+
+.plans {
+    display: flex;
+    justify-content: space-between;
+
+    @include mobile {
+        display: flex;
+        flex-direction: column;
+
+        .card {
+            width: 100%;
+        }
+    }
+
+    margin-top: 2rem;
+}
+
+.card {
+    width: calc(25% - 10px);
+    padding: 1rem 1.5rem;
+
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: 0px 0px 2px #aaa;
+}
+
+h2 {
+    margin: 0;
+
+    font-weight: normal;
+}
+
+p {
+    margin-bottom: 0;
+}
+
+.price {
+    margin-bottom: 1rem;
+
+    color: #F4A423;
+
+    font-size: 1.6rem;
+    font-weight: bold;
+}
+
+button {
+    display: block;
+
+    width: 100%;
+
+    background-color: #D33F49;
+    color: white;
+    border: none;
+    border-radius: 4px;
+
+    font-size: 1rem;
+    text-align: center;
+    line-height: 2rem;
+
+    outline: none;
+    cursor: pointer;
+}
