@@ -1,0 +1,44 @@
+@import '../assets/fonts/fonts';
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+
+main {
+    height: 100vh;
+    background: url('../img/got-bg.jpg');
+    background-size: cover;
+    position: relative;
+
+    .overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        background: rgba(0,0,0, 0.6);
+        z-index: 0;
+        height: 100%;
+        width: 100%;
+    }
+
+    .content {
+        display: flex;
+        justify-content: space-between;
+        height: 100%;
+        color: #fff;
+
+        * {
+            padding: 1.2em;
+            position: relative;
+            z-index: 1;
+            font-size: 1.8em;
+            font-family: $mainFont;
+        }
+
+        :nth-child(1){
+            align-self: flex-end;
+        }
+        
+    }
+}
