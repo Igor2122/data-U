@@ -18,3 +18,14 @@
     height: auto;
     text-align: center;
 }
+
+
+// Resposive queries
+
+$mobile: 840px;
+
+@mixin mobile {
+    @media(max-width: #{$mobile}) {
+        @content;
+    }
+}

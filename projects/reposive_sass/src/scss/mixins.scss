@@ -1,10 +1,19 @@
 
 
 
-$moile: 400px;
+$mobile: 0px;
 
 @mixin mobile {
-    @media(max-width: #{$moile}) {
+    @media(min-width: #{$mobile}) {
         @content;
     }
 }
+
+$ipad: 400px;
+
+@mixin ipad {
+    @media(min-width: #{$ipad}) {
+        @content;
+    }
+}
+

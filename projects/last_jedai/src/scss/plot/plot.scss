@@ -1,13 +1,20 @@
 @import '../common/base';
 
+
 .plot {
     height: 480px;
     width: 100%;
     text-align: center;
 
+    @include mobile{
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    
+
     h2 {
         color: black;
-
     }
 
     .plot-content {

@@ -4,6 +4,11 @@
     height: 500px;
     @include centerDiv;
 
+    @include mobile {
+        height: auto;
+        display: flex;
+    }
+
     .ratings-charts {
         @include flex;
         flex-direction: row;
