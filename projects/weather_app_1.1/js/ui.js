@@ -10,7 +10,12 @@ class Ui {
             })
             .then(function (data) {
                 data.map(res => {
-                    console.log(res[val]);
+                    let city = res['name'][val];
+                    console.log(city);
+                    if(res['name'] == val){
+                        console.log(res['id']);
+                    }
+                    // console.log(res[val], res['id']);
                 })
             })
     }
@@ -30,6 +35,7 @@ class Ui {
             let userInput = e.target.value;
             if (userInput !== '') {
                 this.getData(userInput);
+
             }
         });
     }
