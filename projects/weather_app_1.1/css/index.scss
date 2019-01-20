@@ -1,19 +1,30 @@
 @import './common/fonts';
+// @font-face {
+//   font-family: main;
+//   src: url('../../fonts/brotherDeluxe1350____2011.ttf');
+// }
+
+
 
 body {
-
   background: url('../img/main-backdrop.png');
   // filter: blur(1px );
   background-repeat: no-repeat;
   background-size: cover;
+
+  .torn-paper-backdrop {
+    width: 40%;
+    position: absolute;
+    z-index: 0;
+  }
   
   h1 {
-    color: black;
-    -webkit-text-fill-color: white;
-    /* Will override color (regardless of order) */
-    -webkit-text-stroke-width: 1px;
-    -webkit-text-stroke-color: black;
-    font-family: $main;
+    // color: black;
+    // -webkit-text-fill-color: white;
+    // /* Will override color (regardless of order) */
+    // -webkit-text-stroke-width: 1px;
+    // -webkit-text-stroke-color: black;
+    font-family: main;
   }
 
 
@@ -30,17 +41,14 @@ body {
     border: none; 
     background: none;
     font-family: $main;
-    cursor: pointer;
+    cursor: url(../img/cursors/hand-389121_960_720.png), auto;
+    cursor: url(../img/cursors/hand-389121_960_720.png), url('../img/cursors/hand-389121_960_720.png') 5 5, pointer;
   }
 
-
-
- 
-
   .weather-content {
-    background:url('../img/paper.png');
-    background-repeat: no-repeat;
-    background-size: cover;
+    // background:url('../img/paper.png');
+    // background-repeat: no-repeat;
+    // // background-size: cover;
     filter: blur(0);
   }
 

@@ -21,7 +21,8 @@ class Ui {
 
     coutriesGenerator(val) {
         let countriesDropDown = document.querySelector('.country-selector');
-        let countriesList = [];
+        const countriesList = [];
+        const citiesList = [];
 
         const cities = fetch("js/test.json")
             .then(function (resp) {
@@ -30,17 +31,16 @@ class Ui {
             .then(function (data) {
 
                 data.map(res => {
-                    // console.log(res);
-
+                    
                     countriesList.push(res['country']);
-                    // console.log(countriesList);
-                    return countriesList;
+                    citiesList.push(res['name']);
+                    return countriesList, citiesList;
 
 
 
                 })
                 const unitqueCoutries = [...new Set(countriesList)];
-                // console.log(unitqueCoutries);
+                console.log(citiesList);
                 for (let i of unitqueCoutries) {
                     console.log(i);
                     let option = document.createElement('option');

@@ -1,16 +1,23 @@
+@font-face {
+  font-family: "main";
+  src: url("../fonts/brotherDeluxe1350____2011.ttf") format("ttf");
+  src: url("../fonts/brotherDeluxe1350____2011.woff") format("woff");
+}
+
 body {
   background: url("../img/main-backdrop.png");
   background-repeat: no-repeat;
   background-size: cover;
 }
 
+body .torn-paper-backdrop {
+  width: 40%;
+  position: absolute;
+  z-index: 0;
+}
+
 body h1 {
-  color: black;
-  -webkit-text-fill-color: white;
-  /* Will override color (regardless of order) */
-  -webkit-text-stroke-width: 1px;
-  -webkit-text-stroke-color: black;
-  font-family: "Homemade Apple", cursive;
+  font-family: main;
 }
 
 body .serp-molot {
@@ -27,13 +34,11 @@ body .choose-location-btn {
   border: none;
   background: none;
   font-family: "Homemade Apple", cursive;
-  cursor: pointer;
+  cursor: url(../img/cursors/hand-389121_960_720.png), auto;
+  cursor: url(../img/cursors/hand-389121_960_720.png), url("../img/cursors/hand-389121_960_720.png") 5 5, pointer;
 }
 
 body .weather-content {
-  background: url("../img/paper.png");
-  background-repeat: no-repeat;
-  background-size: cover;
   -webkit-filter: blur(0);
           filter: blur(0);
 }
