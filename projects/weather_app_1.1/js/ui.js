@@ -4,14 +4,13 @@ class Ui {
     }
 
     getData(val) {
-        const countryDropDown = document.querySelector('dropdown-menu');
         const cities = fetch("js/test.json")
             .then(function (resp) {
                 return resp.json();
             })
             .then(function (data) {
                 data.map(res => {
-                    if(res['name'] == val){
+                    if (res['name'] == val) {
                         console.log(res['id']);
                         let id = res['id'];
                         return id;
@@ -20,13 +19,51 @@ class Ui {
             })
     }
 
-    // helper functions 
+    coutriesGenerator(val) {
+        let countriesDropDown = document.querySelector('.country-selector');
+        let countriesList = [];
 
-    convertKelnToCelcius (a ){
-        return  a - 273.15;
+        const cities = fetch("js/test.json")
+            .then(function (resp) {
+                return resp.json();
+            })
+            .then(function (data) {
+
+                data.map(res => {
+                    // console.log(res);
+
+                    countriesList.push(res['country']);
+                    // console.log(countriesList);
+                    return countriesList;
+
+
+
+                })
+                const unitqueCoutries = [...new Set(countriesList)];
+                // console.log(unitqueCoutries);
+                for (let i of unitqueCoutries) {
+                    console.log(i);
+                    let option = document.createElement('option');
+                    option.textContent = i;
+                    countriesDropDown.appendChild(option);
+                }
+            })
+
     }
 
-    dropDownItems (val) {
+    // helper functions 
+
+    convertKelnToCelcius(a) {
+        return a - 273.15;
+    }
+
+    weatherIconSelector(val) {
+        let icons = {
+            sunny: sunny.png,
+        }
+    }
+
+    dropDownItems(val) {
         const temperature = document.querySelector('#cur-temp');
         temperature.textContent = `Temperature: ${parseInt(this.convertKelnToCelcius(val['main']['temp']))}`;
 
@@ -39,7 +76,7 @@ class Ui {
 
     getInputValue(e) {
         const input = document.querySelector('#city');
-        
+
         input.addEventListener('keyup', (e) => {
             let userInput = e.target.value;
             if (userInput !== '') {

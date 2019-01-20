@@ -15,12 +15,19 @@ body h1 {
 
 body .serp-molot {
   position: absolute;
-  left: 3em;
+  right: -1.8em;
   top: 50px;
   z-index: 99;
   width: 90px;
   -webkit-transform: rotate(40deg);
           transform: rotate(40deg);
+}
+
+body .choose-location-btn {
+  border: none;
+  background: none;
+  font-family: "Homemade Apple", cursive;
+  cursor: pointer;
 }
 
 body .weather-content {
