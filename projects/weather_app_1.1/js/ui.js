@@ -4,18 +4,18 @@ class Ui {
     }
 
     getData(val) {
+        const countryDropDown = document.querySelector('dropdown-menu');
         const cities = fetch("js/test.json")
             .then(function (resp) {
                 return resp.json();
             })
             .then(function (data) {
                 data.map(res => {
-                    let city = res['name'][val];
-                    console.log(city);
                     if(res['name'] == val){
                         console.log(res['id']);
+                        let id = res['id'];
+                        return id;
                     }
-                    // console.log(res[val], res['id']);
                 })
             })
     }
@@ -29,7 +29,6 @@ class Ui {
 
     getInputValue(e) {
         const input = document.querySelector('.city-search');
-        const countryDropDown = document.querySelector('dropdown-menu');
         
         input.addEventListener('keyup', (e) => {
             let userInput = e.target.value;

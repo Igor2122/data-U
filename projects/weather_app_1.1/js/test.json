@@ -1,5 +1,4 @@
-[
-  {
+[{
     "id": 707860,
     "name": "Hurzuf",
     "country": "UA",
@@ -15,6 +14,24 @@
     "coord": {
       "lon": 34.283333,
       "lat": 44.549999
+    }
+  },
+  {
+    "id": 703448,
+    "name": "Kiev",
+    "country": "UA",
+    "coord": {
+      "lon": 30.516666,
+      "lat": 50.433334
+    }
+  },
+  {
+    "id": 553791,
+    "name": "Kamenetskiy",
+    "country": "RU",
+    "coord": {
+      "lon": 38.221149,
+      "lat": 54.013531
     }
   },
   {
