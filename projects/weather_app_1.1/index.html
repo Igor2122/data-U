@@ -7,38 +7,39 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge" />
   <!-- <link rel="stylesheet" href="/css/index.css" /> -->
   <!-- Bootstrap CSS -->
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS"
+    crossorigin="anonymous">
+  <link rel="stylesheet" href="./css/index.css">
   <title>Gulp and SASS Demo</title>
 </head>
 
 
 <body>
-
-  <div class="row mt-5">
-    <div class="col-md-6 mx-auto text-center bg-primary mt-3 p-5 rounded">
-        <div class="dropdown">
-            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              Dropdown button
-            </button>
-            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-              <a class="dropdown-item" href="#">Action</a>
-            </div>
-          </div>
-      <input class="city-search" type="text">
-      <h1 id="w-location"></h1>
-      <h3 class="text-dark" id="w-decs"></h3>
-      <h3 id="w-string"></h3>
-      <img id="w-icon">
-      <ul class="list-group mt-3" id="w-details">
-        <div class="li list-group-item" id="w-humidity"></div>
-        <div class="li list-group-item" id="w-dewpoint"></div>
-        <div class="li list-group-item" id="w-feels-like"></div>
-        <div class="li list-group-item" id="w-wind"></div>
-      </ul>
-      <hr>
+  <!-- Modal to choose the city -->
+  <div class="row mt-5 ">
+    <div class="col-md-6 ml-5 text-center mt-3 p-5 rounded weather-content">
       <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#locModal">
         Change Location
       </button>
+      <!-- /Modal to choose the city -->
+
+      <!-- main ui elemets -->
+      <div class="weather-details">
+        <h1 id="w-location"></h1>
+        <h3 class="text-dark" id="cur-temp"></h3>
+        <h3 id="w-string"></h3>
+        <img id="w-icon">
+        <ul class="list-group mt-3" id="w-details">
+          <div class="li list-group-item" id="w-humidity"></div>
+          <div class="li list-group-item" id="w-dewpoint"></div>
+          <div class="li list-group-item" id="w-feels-like"></div>
+          <div class="li list-group-item" id="w-wind"></div>
+        </ul>
+      </div>
+      <!-- /main ui elemets -->
+
+
+      <hr>
       <div class="modal fade" id="locModal" tabindex="-1" role="dialog" aria-labelledby="locModal " aria-hidden="true">
         <div class="modal-dialog" role="document">
           <div class="modal-content">
@@ -50,13 +51,18 @@
             </div>
             <div class="modal-body">
               <form id="w-form">
+                <div class="dropdown">
+                  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown"
+                    aria-haspopup="true" aria-expanded="false">
+                    Choose Country
+                  </button>
+                  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                    <a class="dropdown-item" href="#">Action</a>
+                  </div>
+                </div>
                 <div class="form-group">
                   <label for="city">City</label>
                   <input type="text" id="city" class="form-control">
-                </div>
-                <div class="form-group">
-                  <label for="state">State</label>
-                  <input type="text" id="state" class="form-control">
                 </div>
               </form>
             </div>

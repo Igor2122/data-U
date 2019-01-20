@@ -1,0 +1,18 @@
+body {
+
+  
+    background: url('../img/main-backdrop.png');
+    // filter: blur(1px );
+    background-repeat: no-repeat;
+    background-size: cover;
+
+  .weather-content {
+    background: pink url('../img/paper.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    filter: blur(0);
+  }
+
+  
+}
+

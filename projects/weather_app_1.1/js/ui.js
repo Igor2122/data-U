@@ -20,15 +20,25 @@ class Ui {
             })
     }
 
+    // helper functions 
+
+    convertKelnToCelcius (a ){
+        return  a - 273.15;
+    }
+
     dropDownItems (val) {
-        // <a class="dropdown-item" href="#">Action</a>
+        const temperature = document.querySelector('#cur-temp');
+        temperature.textContent = `Temperature: ${parseInt(this.convertKelnToCelcius(val['main']['temp']))}`;
+
+        const locationName = document.querySelector('#w-location');
         const item = document.createElement('a');
-        item.innerHTML = `<a class="dropdown-item" href="#">${val}</a>`;
+        item.innerHTML = `<a class="dropdown-item" href="#">${val['name']}</a>`;
+        locationName.appendChild(item);
     }
 
 
     getInputValue(e) {
-        const input = document.querySelector('.city-search');
+        const input = document.querySelector('#city');
         
         input.addEventListener('keyup', (e) => {
             let userInput = e.target.value;
