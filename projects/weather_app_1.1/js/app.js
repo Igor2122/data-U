@@ -1,6 +1,6 @@
 // instant weather object 
 
-// const weather = new Weatehr();
+const weather = new Weatehr();
 const ui = new Ui();
 
 

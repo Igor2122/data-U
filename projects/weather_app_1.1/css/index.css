@@ -4,8 +4,27 @@ body {
   background-size: cover;
 }
 
+body h1 {
+  color: black;
+  -webkit-text-fill-color: white;
+  /* Will override color (regardless of order) */
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: black;
+  font-family: "Homemade Apple", cursive;
+}
+
+body .serp-molot {
+  position: absolute;
+  left: 3em;
+  top: 50px;
+  z-index: 99;
+  width: 90px;
+  -webkit-transform: rotate(40deg);
+          transform: rotate(40deg);
+}
+
 body .weather-content {
-  background: pink url("../img/paper.jpg");
+  background: url("../img/paper.png");
   background-repeat: no-repeat;
   background-size: cover;
   -webkit-filter: blur(0);

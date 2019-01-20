@@ -1,18 +1,41 @@
+@import './common/fonts';
+
 body {
 
+  background: url('../img/main-backdrop.png');
+  // filter: blur(1px );
+  background-repeat: no-repeat;
+  background-size: cover;
   
-    background: url('../img/main-backdrop.png');
-    // filter: blur(1px );
-    background-repeat: no-repeat;
-    background-size: cover;
+  h1 {
+    color: black;
+    -webkit-text-fill-color: white;
+    /* Will override color (regardless of order) */
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: black;
+    font-family: $main;
+  }
+
+
+  .serp-molot {
+    position: absolute;
+    left: 3em;
+    top: 50px;
+    z-index: 99;
+    width: 90px;
+    transform: rotate(40deg);
+  }
+
+
+
+ 
 
   .weather-content {
-    background: pink url('../img/paper.jpg');
+    background:url('../img/paper.png');
     background-repeat: no-repeat;
     background-size: cover;
     filter: blur(0);
   }
 
-  
-}
 
+}

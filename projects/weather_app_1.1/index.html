@@ -9,6 +9,7 @@
   <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS"
     crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Homemade+Apple" rel="stylesheet">
   <link rel="stylesheet" href="./css/index.css">
   <title>Gulp and SASS Demo</title>
 </head>
@@ -17,7 +18,7 @@
 <body>
   <!-- Modal to choose the city -->
   <div class="row mt-5 ">
-    <div class="col-md-6 ml-5 text-center mt-3 p-5 rounded weather-content">
+    <div class="col-md-6 h-100 ml-5 text-center mt-3 p-5 rounded weather-content">
       <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#locModal">
         Change Location
       </button>
@@ -25,16 +26,13 @@
 
       <!-- main ui elemets -->
       <div class="weather-details">
-        <h1 id="w-location"></h1>
+        <img class="serp-molot" src="./img/serp_molot.png" alt="" srcset="">
+        <h1 class="mt-3">Comm Weather</h1>
+        <img src="./img/weather_icons/iconfinder_sunny_2800045.svg" alt="" srcset="">
+        <h2 id="w-location"></h2>
         <h3 class="text-dark" id="cur-temp"></h3>
         <h3 id="w-string"></h3>
         <img id="w-icon">
-        <ul class="list-group mt-3" id="w-details">
-          <div class="li list-group-item" id="w-humidity"></div>
-          <div class="li list-group-item" id="w-dewpoint"></div>
-          <div class="li list-group-item" id="w-feels-like"></div>
-          <div class="li list-group-item" id="w-wind"></div>
-        </ul>
       </div>
       <!-- /main ui elemets -->
 
