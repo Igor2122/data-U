@@ -1,0 +1,15 @@
+@mixin on-top {
+    position: relative;
+    z-index: 1;
+}
+
+$mobile:  320px;
+$tablet: 480px;
+$desctop: 767px;
+$large-desctop: 1024;
+
+@mixin  mobile {
+    @media (min-width: $mobile) and (max-width: $tablet) {
+        @content;
+    }
+}

@@ -1,0 +1,33 @@
+.skills {
+    height: 50vh;
+    background: yellow;
+    text-align: center;
+
+    @include mobile {
+        height: auto;
+    }
+
+    h2 {
+        padding: 1.5em 0 0;
+        margin: 0;
+    }
+
+
+    .slills-card-parent {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        width: 80%;
+        height: 70%;
+        margin: auto;
+
+        @include mobile {
+            flex-direction: row;
+            flex-wrap: wrap;
+        }
+
+        .skill-card img {
+            width: 20%;
+        }
+    }
+}

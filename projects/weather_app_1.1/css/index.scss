@@ -1,8 +1,5 @@
 @import './common/fonts';
-// @font-face {
-//   font-family: main;
-//   src: url('../../fonts/brotherDeluxe1350____2011.ttf');
-// }
+
 
 
 
@@ -41,8 +38,7 @@ body {
     border: none; 
     background: none;
     font-family: $main;
-    cursor: url(../img/cursors/hand-389121_960_720.png), auto;
-    cursor: url(../img/cursors/hand-389121_960_720.png), url('../img/cursors/hand-389121_960_720.png') 5 5, pointer;
+    @include custom-cursor('./cursors/310275.svg');
   }
 
   .weather-content {

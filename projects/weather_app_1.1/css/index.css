@@ -34,8 +34,6 @@ body .choose-location-btn {
   border: none;
   background: none;
   font-family: "Homemade Apple", cursive;
-  cursor: url(../img/cursors/hand-389121_960_720.png), auto;
-  cursor: url(../img/cursors/hand-389121_960_720.png), url("../img/cursors/hand-389121_960_720.png") 5 5, pointer;
 }
 
 body .weather-content {
