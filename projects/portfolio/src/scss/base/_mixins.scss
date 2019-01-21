@@ -3,6 +3,12 @@
     z-index: 1;
 }
 
+@mixin vertical-Align {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
 $mobile:  320px;
 $tablet: 480px;
 $desctop: 767px;
@@ -10,6 +16,12 @@ $large-desctop: 1024;
 
 @mixin  mobile {
     @media (min-width: $mobile) and (max-width: $tablet) {
+        @content;
+    }
+}
+
+@mixin  desktop {
+    @media (min-width: $tablet) and (max-width: $large-desctop) {
         @content;
     }
 }

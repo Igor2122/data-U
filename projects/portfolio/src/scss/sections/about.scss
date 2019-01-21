@@ -1,0 +1,50 @@
+@import "../base/base";
+
+.about {
+    height: 100vh;
+    background: purple;
+
+    .about-container {
+        height: 100%;
+        width: 70%;
+        margin: auto;
+        @include vertical-Align;
+        // text-align: center;
+
+        @include mobile {
+            flex-direction: column;
+
+            .img-div,
+            .about-container {
+                width: 100%;
+                justify-content: center;
+            }
+        }
+
+        .img-div,
+        .about-text-div {
+            height: 100%;
+        }
+
+        .img-div {
+            @include vertical-Align;
+
+            @include desktop {  
+                width: 30%;
+            }
+        }
+
+        .about-text-div {
+            @include vertical-Align;
+            justify-content: center;
+            padding: 1em;
+
+            @include desktop {
+                width: 60%;
+            }
+        }
+
+
+
+    }
+}

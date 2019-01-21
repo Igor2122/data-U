@@ -32,7 +32,16 @@ body {
         position: relative;
         @include on-top;
         color: #eee;
+        
+        .oval { 
+            overflow: hidden;
+            border-radius: 100%;
+            width: 100%;
+            height: 100%;
+        }
     }
+
+    
 
     .navigation {
         height: 10vh;
