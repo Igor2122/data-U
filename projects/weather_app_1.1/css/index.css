@@ -16,8 +16,18 @@ body .torn-paper-backdrop {
   z-index: 0;
 }
 
-body h1 {
+body h1,
+body h2,
+body h3 {
   font-family: main;
+}
+
+body h2 {
+  font-size: 2em;
+}
+
+body h3 {
+  font-size: 1.5em;
 }
 
 body .serp-molot {

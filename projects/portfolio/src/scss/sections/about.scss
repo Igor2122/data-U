@@ -4,21 +4,22 @@
     height: 100vh;
     background: purple;
 
+    @include mobile {
+        height: 100%;
+        text-align: center;
+    }
+
     .about-container {
         height: 100%;
         width: 70%;
         margin: auto;
         @include vertical-Align;
-        // text-align: center;
+        
 
         @include mobile {
             flex-direction: column;
-
-            .img-div,
-            .about-container {
-                width: 100%;
-                justify-content: center;
-            }
+            height:  100%;
+            padding: 1em 0;
         }
 
         .img-div,
@@ -28,7 +29,7 @@
 
         .img-div {
             @include vertical-Align;
-
+            
             @include desktop {  
                 width: 30%;
             }
@@ -38,6 +39,17 @@
             @include vertical-Align;
             justify-content: center;
             padding: 1em;
+            @include mobile {
+                width: 90%;
+            }
+
+            h2 {
+                font-family: $main;
+            }
+             
+            p {
+                font-family: $secondary;
+            }
 
             @include desktop {
                 width: 60%;

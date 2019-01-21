@@ -1,8 +1,6 @@
 @import './common/fonts';
 
 
-
-
 body {
   background: url('../img/main-backdrop.png');
   // filter: blur(1px );
@@ -14,14 +12,23 @@ body {
     position: absolute;
     z-index: 0;
   }
-  
-  h1 {
+
+  h1,
+  h2,
+  h3 {
     // color: black;
     // -webkit-text-fill-color: white;
     // /* Will override color (regardless of order) */
     // -webkit-text-stroke-width: 1px;
     // -webkit-text-stroke-color: black;
     font-family: main;
+  }
+  h2 {
+    font-size: 2em;
+  }
+
+  h3 {
+    font-size: 1.5em;
   }
 
 
@@ -35,10 +42,10 @@ body {
   }
 
   .choose-location-btn {
-    border: none; 
+    border: none;
     background: none;
     font-family: $main;
-    @include custom-cursor('./cursors/310275.svg');
+    // @include custom-cursor('./cursors/310275.svg');
   }
 
   .weather-content {

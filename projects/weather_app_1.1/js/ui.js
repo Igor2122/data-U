@@ -3,24 +3,10 @@ class Ui {
         this.val = val;
     }
 
-    getData(val) {
-        const cities = fetch("js/test.json")
-            .then(function (resp) {
-                return resp.json();
-            })
-            .then(function (data) {
-                data.map(res => {
-                    if (res['name'] == val) {
-                        console.log(res['id']);
-                        let id = res['id'];
-                        return id;
-                    }
-                })
-            })
-    }
 
     coutriesGenerator(val) {
         let countriesDropDown = document.querySelector('.country-selector');
+        let cityDropDown = document.querySelector('.city-selector');
         const countriesList = [];
         const citiesList = [];
 
@@ -37,7 +23,6 @@ class Ui {
                     return countriesList, citiesList;
 
 
-
                 })
                 const unitqueCoutries = [...new Set(countriesList)];
                 console.log(citiesList);
@@ -46,6 +31,11 @@ class Ui {
                     let option = document.createElement('option');
                     option.textContent = i;
                     countriesDropDown.appendChild(option);
+                }
+                for (let city of citiesList){
+                    let option = document.createElement('option');
+                    option.textContent = city;
+                    cityDropDown.appendChild(option);
                 }
             })
 
@@ -64,15 +54,44 @@ class Ui {
     }
 
     dropDownItems(val) {
-        const temperature = document.querySelector('#cur-temp');
-        temperature.textContent = `Temperature: ${parseInt(this.convertKelnToCelcius(val['main']['temp']))}`;
 
+        
+
+        const temperature = document.querySelector('#cur-temp');
+        const windSpeed = document.querySelector('#wind-speed');
+        const visibilityIcont = document.querySelector('.visibility');
+        temperature.textContent = `${parseInt(this.convertKelnToCelcius(val['main']['temp']))} Cel`;
+        
         const locationName = document.querySelector('#w-location');
-        const item = document.createElement('a');
-        item.innerHTML = `<a class="dropdown-item" href="#">${val['name']}</a>`;
-        locationName.appendChild(item);
+        locationName.textContent = `${val['name']}`;
+        windSpeed.textContent = val['wind']['speed'] + ' km/h';
     }
 
+    getLocationFromDropDown () {
+        const countrySelectionButton = document.querySelector('.coutnry-selection-value');
+        const countrySelector = document.querySelector('.country-selector');
+        const citySelector = document.querySelector('.city-selector');
+        countrySelectionButton.addEventListener('click', () => {
+            console.log( citySelector.value );
+        })
+    }
+
+
+    getData(val) {
+        const cities = fetch("js/test.json")
+            .then(function (resp) {
+                return resp.json();
+            })
+            .then(function (data) {
+                data.map(res => {
+                    if (res['name'] == val) {
+                        console.log(res['id']);
+                        let id = res['id'];
+                        return id;
+                    }
+                })
+            })
+    }
 
     getInputValue(e) {
         const input = document.querySelector('#city');
