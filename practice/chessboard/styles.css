@@ -1,0 +1,65 @@
+body {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.row-wraper {
+    height: 55vmax;
+    width: 55vmax;
+    margin: auto;
+    border: 2px solid black;
+}
+
+/* .row {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    height: 6.5vmax;
+    background: red;
+}
+
+.light,
+.dark {
+    height: 100%;
+    width: 12%;
+    background: #fff;
+}
+
+
+
+.dark {
+    background: black;
+} */
+
+
+/* js */
+
+.row-js {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    height: 6.5vmax;
+    /* background: red; */
+}
+.dark-js,
+.light-js {
+    height: 6.1vmax;
+    width: 6.1vmax;
+}
+
+
+.dark-js {
+    background: black;
+}
+
+.light-js {
+    background: black;
+}
+
+.center {
+    line-height: 2rem;
+    height: 2rem;
+    text-align: center;
+}
