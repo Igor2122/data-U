@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Bank App</title>
+</head>
+
+<body>
+    <style>
+        body {
+            height: 100vh;
+        }
+        main {
+            display: flex;
+            height: 100%;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+        }
+
+        form {
+            background: rgb(50, 122, 230);
+            padding: 2em;
+        }
+
+        table, th, td {
+            border: 1px solid black;
+            border-collapse: collapse;
+            }
+    </style>
+    <main>
+        <form action="" class="accountNumberForm" name="accountNumberForm">
+            <label for="acc-number">Please Input Your Account Number</label>
+            <input class="acc-number" name="acc-number" type="text">
+            <input type="button" class="getData" value="Get Balance">
+            <input type="button" class="withDraw" value="withDraw">
+        </form>
+        <div class="acc-info-res">
+            <h1>Hello Your available balance is: <span class="balance"></span></h1>
+            <h2></h2>
+            <!-- <button class="openStatement">Show Statement</button> -->
+            <table class="statement-table" style="width:100%">
+                <tr>
+                    <th>Acc#</th>
+                    <th>Last Balance</th>
+                    <th>withDraw Ammount</th>
+                    <th>New Ammount</th>
+                </tr>
+                <tr>
+                    <td>acc ...</td>
+                    <td>amm</td>
+                    <td>amm</td>
+                    <td>amm</td>
+                </tr>
+                
+            </table>
+        </div>
+    </main>
+    <script src="./app.js"></script>
+</body>
+
+</html>
