@@ -21,8 +21,32 @@ const getWeatehr = () => {
 
 document.addEventListener('DOMContentLoaded', getWeatehr);
 
+
+
 const id = ui.getLocationFromDropDown();
-console.log(id, 'when avilable');
+
+const getData = (val) => {
+    const cities = fetch("js/test.json")
+        .then(function (resp) {
+            return resp.json();
+        })
+        .then(function (data) {
+            data.map(res => {
+                if (res['name'] == val) {
+                    console.log(res['id']);
+                    let id = res['id'];
+                    weather.changeLocation(id);
+                    weather.getWeatehr()
+                        .then(query => {
+                            console.log(query);
+                            ui.dropDownItems(query);
+                        })
+                        .catch(err => console.log(err));
+                    console.log(id);
+                }
+            })
+        })
+}
 
 
 

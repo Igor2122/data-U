@@ -1,8 +1,3 @@
-
-const weatherCon = new Weatehr();
-
-
-
 class Ui {
     constructor(val) {
         this.val = val;
@@ -77,36 +72,12 @@ class Ui {
         const countrySelector = document.querySelector('.country-selector');
         const citySelector = document.querySelector('.city-selector');
         countrySelectionButton.addEventListener('click', () => {
-            // console.log( citySelector.value );
-            this.getData(citySelector.value);
-            let res = citySelector.value;
-            console.log(res);
+            getData(citySelector.value);
         })
     }
 
 
-    getData(val) {
-        const cities = fetch("js/test.json")
-            .then(function (resp) {
-                return resp.json();
-            })
-            .then(function (data) {
-                data.map(res => {
-                    if (res['name'] == val) {
-                        console.log(res['id']);
-                        let id = res['id'];
-                        weatherCon.changeLocation(id);
-                        weatherCon.getWeatehr()
-                            .then(query => {
-                                console.log(query);
-                                localUI.dropDownItems(query);
-                            })
-                            .catch(err => console.log(err));
-                        console.log(id);
-                    }
-                })
-            })
-    }
+    
 
     getInputValue(e) {
         const input = document.querySelector('#city');
@@ -122,4 +93,3 @@ class Ui {
 
 }
 
-const localUI = new Ui();
