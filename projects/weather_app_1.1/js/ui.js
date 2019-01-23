@@ -1,4 +1,7 @@
+
 const weatherCon = new Weatehr();
+
+
 
 class Ui {
     constructor(val) {
@@ -19,7 +22,7 @@ class Ui {
             .then(function (data) {
 
                 data.map(res => {
-                    
+
                     countriesList.push(res['country']);
                     citiesList.push(res['name']);
                     return countriesList, citiesList;
@@ -34,7 +37,7 @@ class Ui {
                     option.textContent = i;
                     countriesDropDown.appendChild(option);
                 }
-                for (let city of citiesList){
+                for (let city of citiesList) {
                     let option = document.createElement('option');
                     option.textContent = city;
                     cityDropDown.appendChild(option);
@@ -57,25 +60,27 @@ class Ui {
 
     dropDownItems(val) {
 
-        
+
 
         const temperature = document.querySelector('#cur-temp');
         const windSpeed = document.querySelector('#wind-speed');
         const visibilityIcont = document.querySelector('.visibility');
         temperature.textContent = `${parseInt(this.convertKelnToCelcius(val['main']['temp']))} Cel`;
-        
+
         const locationName = document.querySelector('#w-location');
         locationName.textContent = `${val['name']}`;
         windSpeed.textContent = val['wind']['speed'] + ' km/h';
     }
 
-    getLocationFromDropDown () {
+    getLocationFromDropDown() {
         const countrySelectionButton = document.querySelector('.coutnry-selection-value');
         const countrySelector = document.querySelector('.country-selector');
         const citySelector = document.querySelector('.city-selector');
         countrySelectionButton.addEventListener('click', () => {
-            console.log( citySelector.value );
+            // console.log( citySelector.value );
             this.getData(citySelector.value);
+            let res = citySelector.value;
+            console.log(res);
         })
     }
 
@@ -90,8 +95,14 @@ class Ui {
                     if (res['name'] == val) {
                         console.log(res['id']);
                         let id = res['id'];
-                        console.log('executed');
-                        weatherCon.changeLocation('707860');
+                        weatherCon.changeLocation(id);
+                        weatherCon.getWeatehr()
+                            .then(query => {
+                                console.log(query);
+                                localUI.dropDownItems(query);
+                            })
+                            .catch(err => console.log(err));
+                        console.log(id);
                     }
                 })
             })
@@ -110,3 +121,5 @@ class Ui {
     }
 
 }
+
+const localUI = new Ui();

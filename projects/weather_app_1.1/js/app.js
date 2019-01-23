@@ -21,7 +21,10 @@ const getWeatehr = () => {
 
 document.addEventListener('DOMContentLoaded', getWeatehr);
 
-ui.getLocationFromDropDown();
+const id = ui.getLocationFromDropDown();
+console.log(id, 'when avilable');
+
+
 
 
 
