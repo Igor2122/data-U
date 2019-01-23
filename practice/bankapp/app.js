@@ -9,11 +9,13 @@ const bankForm = document.querySelector('.accountNumberForm');
 const input = document.querySelector('.acc-number');
 const output = document.querySelector('h1 .balance');
 const statementTable = document.querySelector('.statement-table');
+statementTable.style.display = 'none';
 
 const getData = (e) => {
     e.preventDefault();
     let accInputedByUser = input.value;
     
+
     let accId = Object.keys(bankInfo);
     if (e.target.className === 'getData') {
         let accInputedByUser = input.value;
@@ -21,7 +23,7 @@ const getData = (e) => {
             accId.map(id => {
                 if (accInputedByUser === id) {
                     output.textContent = bankInfo[accInputedByUser];
-                    
+                    statementTable.style.display = 'block';
                 }
             })
         } else {
@@ -51,6 +53,12 @@ const getData = (e) => {
             output.textContent = newBalance;
 
             bankInfo[accInputedByUser] = newBalance;
+
+
+            // Statment section: 
+            console.log(statementTable.childNodes);
+
+
 
             if(newBalance < 0) {
                 output.textContent = `${newBalance} You have no funds available`;

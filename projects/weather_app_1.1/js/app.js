@@ -7,7 +7,6 @@ ui.coutriesGenerator();
 
 
 
-let userCityChooser = ui.getData();
 weather.changeLocation('3067696');
 
 

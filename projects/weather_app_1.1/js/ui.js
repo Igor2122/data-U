@@ -1,3 +1,5 @@
+const weatherCon = new Weatehr();
+
 class Ui {
     constructor(val) {
         this.val = val;
@@ -73,6 +75,7 @@ class Ui {
         const citySelector = document.querySelector('.city-selector');
         countrySelectionButton.addEventListener('click', () => {
             console.log( citySelector.value );
+            this.getData(citySelector.value);
         })
     }
 
@@ -87,7 +90,8 @@ class Ui {
                     if (res['name'] == val) {
                         console.log(res['id']);
                         let id = res['id'];
-                        return id;
+                        console.log('executed');
+                        weatherCon.changeLocation('707860');
                     }
                 })
             })
