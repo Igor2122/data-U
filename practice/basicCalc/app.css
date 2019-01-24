@@ -1,0 +1,53 @@
+.calc-base {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  height: 500px;
+  width: 300px;
+  background: lightcyan;
+  margin: auto;
+  border: 1px solid black;
+  border-radius: 2em;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+.calc-base .calc-window {
+  height: 15%;
+  width: 90%;
+  border: 1px solid yellow;
+}
+
+.calc-base .calc-buttons {
+  height: 75%;
+  width: 90%;
+  border: 1px solid black;
+}
+
+.calc-base .calc-buttons .row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  width: 100%;
+  height: 20%;
+}
+
+.calc-base .calc-buttons .row .cel {
+  height: 100%;
+  width: 24%;
+  border: 1px solid black;
+}
+/*# sourceMappingURL=app.css.map */
