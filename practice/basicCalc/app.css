@@ -27,12 +27,23 @@
   height: 15%;
   width: 90%;
   border: 1px solid yellow;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 3em;
+  background: #c0baba;
+  border-radius: .5em;
 }
 
 .calc-base .calc-buttons {
   height: 75%;
   width: 90%;
-  border: 1px solid black;
 }
 
 .calc-base .calc-buttons .row {
@@ -49,5 +60,14 @@
   height: 100%;
   width: 24%;
   border: 1px solid black;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 /*# sourceMappingURL=app.css.map */

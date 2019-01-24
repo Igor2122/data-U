@@ -17,13 +17,18 @@
         height: 15%;
         width: 90%;
         border: 1px solid yellow;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        font-size: 3em;
+        background: rgb(192, 186, 186);
+        border-radius: .5em;
     }
 
     .calc-buttons {
         height: 75%;
         width: 90%;
-        border: 1px solid black;
-        
+
         .row {
             display: flex;
             flex-wrap: wrap;
@@ -34,6 +39,9 @@
                 height: 100%;
                 width: 24%;
                 border: 1px solid black;
+                display: flex;
+                justify-content: center;
+                align-items: center;
             }
         }
     }

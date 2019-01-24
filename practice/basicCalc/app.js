@@ -5,10 +5,14 @@ let inputs = [];
 let operator;
 
 const doMath = (e) => {
+    
     let inputValue;
-    if (e.target.id == 'nun-number' || e.target.id == 'equals') {
+    if (e.target.id == 'nun-number') {
         inputValue = e.target.textContent;
         operator = inputValue;
+        console.log(inputValue);
+    } else if (e.target.id == 'equals') {
+        inputValue = e.target.textContent;
     } else {
         inputValue = parseInt(e.target.textContent);
         inputs.push(inputValue);
@@ -16,39 +20,56 @@ const doMath = (e) => {
 
 
     console.log(inputs);
-    // console.log(inputValue, typeof(inputValue));
     calaculatorWindow.textContent += inputValue;
 
-    console.log(operator);
 
-    const doMathInner = (a, b ,operator) => {
+    const doMathInner = (a, b, c) => {
         let res;
-        console.log(operator);
-        switch (operator) {
-            case (operator == '+'):
+
+        console.log(typeof (operator));
+
+        switch (c) {
+            case  '+':
                 res = a + b;
                 break;
-    
+
         }
-         
+        switch (c) {
+            case  '-':
+                res = a - b;
+                break;
+
+        }
+        switch (c) {
+            case  '*':
+                res = a * b;
+                break;
+
+        }
+        switch (c) {
+            case  '/':
+                res = a / b;
+                break;
+
+        }
+
         return res;
     }
 
-    if(e.target.id == 'equals') {
-        let mathRes = doMathInner(parseInt(inputs[0]), parseInt(inputs[1], operator));
-        console.log(mathRes);
+    if (e.target.id == 'equals') {
+        let mathRes = doMathInner(parseInt(inputs[0]), parseInt(inputs[1]), operator);
+
         calaculatorWindow.textContent += mathRes;
     }
 
-    if(e.target.id === 'reset'){
+    if (e.target.id === 'reset') {
         inputs = [];
         calaculatorWindow.textContent = '';
     }
+
+    
 
 }
 
 
 buttonsDiv.addEventListener('click', doMath);
-
-
-
