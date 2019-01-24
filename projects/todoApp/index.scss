@@ -1,0 +1,46 @@
+main {
+    height: 100vh;
+    display: flex;
+    // align-items: center;
+    background: lightgreen;
+    justify-content: center;
+
+    .app-wraper {
+        background: rgb(233, 202, 189);
+        align-content: center;
+        width: 60%;
+        padding-top: 10vh;
+        display: flex;
+        flex-direction: column;
+        align-content: center;
+        text-align: center;
+        h1 {
+            margin: auto;
+        }
+
+        ul {
+            width: 50%;
+            margin: auto;
+
+            li {
+                position: relative;
+            }
+
+            li:after {
+                content: '';
+                position: absolute;
+                right: 0;
+                top: 0;
+                width: 2em;
+                height: 2em;
+                background: url('./img/delete.png');
+                background-size: cover;
+            }
+        }
+
+        input {
+            width: 30%;
+            margin: 0 auto;
+        }
+    }
+}

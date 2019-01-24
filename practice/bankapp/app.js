@@ -2,7 +2,20 @@ const bankInfo = {
     '000256784': '790',
     '000986056': '5600',
     '001546238': '78065',
-    '030987456': '120910'
+    '030987456': '120910',
+}
+
+// const {val1, val2} = bankInfo;
+
+// console.log(val1, val2)
+
+
+
+for(const prop in bankInfo) {
+    let value = bankInfo[prop];
+    console.log(prop);
+
+    // console.log(value);
 }
 
 const bankForm = document.querySelector('.accountNumberForm');

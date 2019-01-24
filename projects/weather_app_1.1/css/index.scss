@@ -8,19 +8,15 @@ body {
   background-size: cover;
 
   .torn-paper-backdrop {
-    width: 40%;
+    max-width: 90%;
     position: absolute;
     z-index: 0;
+    opacity: .85;
   }
 
   h1,
   h2,
   h3 {
-    // color: black;
-    // -webkit-text-fill-color: white;
-    // /* Will override color (regardless of order) */
-    // -webkit-text-stroke-width: 1px;
-    // -webkit-text-stroke-color: black;
     font-family: main;
   }
   h2 {
@@ -29,6 +25,10 @@ body {
 
   h3 {
     font-size: 1.5em;
+  }
+
+  .icon {
+    height: 2.5em;
   }
 
 
@@ -49,9 +49,9 @@ body {
   }
 
   .weather-content {
-    // background:url('../img/paper.png');
-    // background-repeat: no-repeat;
-    // // background-size: cover;
+    background:url('../img/paper.png');
+    background-repeat: no-repeat;
+    background-size: cover;
     filter: blur(0);
   }
 

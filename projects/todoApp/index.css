@@ -1,0 +1,57 @@
+main {
+  height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  background: lightgreen;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+main .app-wraper {
+  background: #e9cabd;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  width: 60%;
+  padding-top: 10vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  align-content: center;
+  text-align: center;
+}
+
+main .app-wraper h1 {
+  margin: auto;
+}
+
+main .app-wraper ul {
+  width: 50%;
+  margin: auto;
+}
+
+main .app-wraper ul li {
+  position: relative;
+}
+
+main .app-wraper ul li:after {
+  content: '';
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 2em;
+  height: 2em;
+  background: url("./img/delete.png");
+  background-size: cover;
+}
+
+main .app-wraper input {
+  width: 30%;
+  margin: 0 auto;
+}
+/*# sourceMappingURL=index.css.map */

@@ -53,17 +53,18 @@ class Ui {
         }
     }
 
-    dropDownItems(val) {
+    fetchWeatherValues(val) {
 
-
-
+        
         const temperature = document.querySelector('#cur-temp');
         const windSpeed = document.querySelector('#wind-speed');
+        const humidity = document.querySelector('#humidity');
         const visibilityIcont = document.querySelector('.visibility');
         temperature.textContent = `${parseInt(this.convertKelnToCelcius(val['main']['temp']))} Cel`;
+        humidity.textContent = val['main']['humidity'];
 
         const locationName = document.querySelector('#w-location');
-        locationName.textContent = `${val['name']}`;
+        locationName.textContent += `${val['name']}`;
         windSpeed.textContent = val['wind']['speed'] + ' km/h';
     }
 
@@ -89,6 +90,25 @@ class Ui {
 
             }
         });
+    }
+
+    chooseMode () {
+
+        const modeToggle = document.querySelector('.mode-toggle');
+        console.log('hello');
+        const toggleMode = () => {
+            document.querySelector('body').setAttribute('style', 'background: center / cover no-repeat url("https://images.pexels.com/photos/326055/pexels-photo-326055.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940");');
+            document.querySelector('.weather-content').setAttribute('style', 'background: rgba(26,198,126,.8);');
+            document.querySelector('h1').style.color = '#fff';
+            document.querySelector('h2').style.color = '#fff';
+            document.querySelector('h3').style.color = '#fff!important';
+            document.querySelector('h4').style.color = '#fff';
+            
+            
+            
+            
+        }
+        document.addEventListener('DOMContentLoaded', toggleMode);
     }
 
 }

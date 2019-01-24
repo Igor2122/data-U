@@ -71,5 +71,4 @@ const doMath = (e) => {
 
 }
 
-
 buttonsDiv.addEventListener('click', doMath);

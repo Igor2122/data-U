@@ -14,12 +14,21 @@ const getWeatehr = () => {
     weather.getWeatehr()
     .then(res => {
         console.log(res);
-        ui.dropDownItems(res);
+        ui.fetchWeatherValues(res);
     })
     .catch(err => console.log(err));
 }
 
+// document.addEventListener('DOMContentLoaded', getWeatehr);
 document.addEventListener('DOMContentLoaded', getWeatehr);
+
+
+// get weather forecast 
+weather.getForecastWeather()
+    .then(res => {
+        console.log(res)
+    })
+    .catch(err => console.log(err));
 
 
 
@@ -39,7 +48,7 @@ const getData = (val) => {
                     weather.getWeatehr()
                         .then(query => {
                             console.log(query);
-                            ui.dropDownItems(query);
+                            ui.fetchWeatherValues(query);
                         })
                         .catch(err => console.log(err));
                     console.log(id);
@@ -48,7 +57,7 @@ const getData = (val) => {
         })
 }
 
-
+ui.chooseMode();
 
 
 
