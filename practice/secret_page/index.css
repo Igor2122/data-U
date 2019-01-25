@@ -1,0 +1,32 @@
+.content {
+  height: 100vh;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background: lightcyan;
+  text-align: center;
+}
+
+.content .mainImage {
+  width: 100%;
+}
+
+.content .message-div-child {
+  opacity: 0;
+  -webkit-transition: opacity .5s;
+  transition: opacity .5s;
+  -webkit-transition-timing-function: cubic-bezier(0.05, -0.43, 0.83, 1.55);
+          transition-timing-function: cubic-bezier(0.05, -0.43, 0.83, 1.55);
+}
+/*# sourceMappingURL=index.css.map */

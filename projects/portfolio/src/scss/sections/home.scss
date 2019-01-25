@@ -1,5 +1,9 @@
 @import '../base/base';
 
+body {
+    background: $main;
+}
+
 html,
 body {
     margin: 0;
@@ -13,8 +17,17 @@ body {
     height: 100vh;
     display: flex;
     flex-direction: column;
-    align-items: center;
     background: center/cover no-repeat url('/img/home-background.jpg') #eee;
+
+    .logo {
+        position: relative;
+        z-index: 1;
+        height: 3em;
+        width: 5em;
+        background: center / contain no-repeat url('/img/igdeveloperslogo.png');
+        margin-top: 2em;
+        margin-left: 2em;
+    }
 
     .overlay {
         position: absolute;
@@ -22,33 +35,61 @@ body {
         left: 0;
         height: 100%;
         width: 100%;
-        background: rgba(0, 0, 255, .7);
+        background: rgba(20, 21, 46, 0.92);
         z-index: 0;
     }
 
     .intro {
-        margin: auto;
-        text-align: center;
-        position: relative;
+        margin-right: auto;
+        height: 90vh;
         @include on-top;
+        margin-top: 9em;
         color: #eee;
-        
-        .oval { 
-            overflow: hidden;
-            border-radius: 100%;
-            width: 100%;
-            height: 100%;
+        align-self: center;
+        margin-left: 2em;
+
+        @include mobile {
+            margin-top: 6em;
         }
+
+        h1 {
+            font-size: 3em;
+        }
+
+        .arrow-down {
+            width: 3em;
+            height: 3em;
+            background: $highlight;
+            margin-top: 7em;
+            border-radius: 3px;
+            @include vertical-Align;
+            justify-content: center;
+
+            @include mobile {
+                display: none;
+            }
+
+            .fa-arrow-down {}
+        }
+
+
+        .social-media {
+            display: flex;
+            justify-content: space-between;
+            width: 10em;
+        }
+
+
     }
 
-    
+
 
     .navigation {
         height: 10vh;
         width: 100%;
         align-self: flex-end;
         margin: 0 auto;
-        background: #eee;
+        background-color: $thirinery;
         @include on-top;
 
 
@@ -62,10 +103,14 @@ body {
             margin: auto;
 
 
-            
+
             li {
-                text-decoration: none;
                 list-style: none;
+
+                a {
+                    color: #fff;
+                    text-decoration: none;
+                }
             }
 
         }

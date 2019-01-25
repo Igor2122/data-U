@@ -1,0 +1,36 @@
+body {
+    perspective-origin: left; // postion of the camera
+    perspective: 600px; // how far is the camera from the screen
+
+    .cat {
+        background: center/contain url('./img/pexels-photo-416160.jpeg') no-repeat;
+        width: 500px;
+        height: 500px;
+        transition: 2s;
+        
+    }
+}
+
+
+.hide {
+    // opacity: 0;
+    transition: all 2s;
+    // transform: translate(100px, 200px) rotate(90deg);
+    // transform-origin: 20% 40%;
+    transform: rotateX(45deg);
+    transform: rotateY(45deg);
+    animation-name: opacity;
+    animation-duration: 2s;
+}
+
+@keyframes opacity {
+    from {
+        opacity: 0
+    }
+
+    to {
+        opacity: 1
+    }
+
+    ;
+}

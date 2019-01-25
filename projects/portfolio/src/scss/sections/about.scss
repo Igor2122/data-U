@@ -2,7 +2,9 @@
 
 .about {
     height: 100vh;
-    background: purple;
+    background: $mian;
+    // background: background-color: #313234;
+    background-image: $background-pattern;
 
     @include mobile {
         height: 100%;
@@ -25,6 +27,11 @@
         .img-div,
         .about-text-div {
             height: 100%;
+
+            .about-img {
+                max-width: 72%;
+                opacity: .9;
+            }
         }
 
         .img-div {
@@ -39,18 +46,19 @@
             @include vertical-Align;
             justify-content: center;
             padding: 1em;
+            h2 {
+                color: $highlight;
+                font-family: $main;
+            } 
+            p {
+                color: #fff;
+                font-family: $secondary;
+            }
             @include mobile {
                 width: 90%;
             }
 
-            h2 {
-                font-family: $main;
-            }
-             
-            p {
-                font-family: $secondary;
-            }
-
+            
             @include desktop {
                 width: 60%;
             }

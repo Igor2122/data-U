@@ -1,0 +1,46 @@
+body {
+  -webkit-perspective-origin: left;
+          perspective-origin: left;
+  -webkit-perspective: 600px;
+          perspective: 600px;
+}
+
+body .cat {
+  background: center/contain url("./img/pexels-photo-416160.jpeg") no-repeat;
+  width: 500px;
+  height: 500px;
+  -webkit-transition: 2s;
+  transition: 2s;
+}
+
+.hide {
+  -webkit-transition: all 2s;
+  transition: all 2s;
+  -webkit-transform: rotateX(45deg);
+          transform: rotateX(45deg);
+  -webkit-transform: rotateY(45deg);
+          transform: rotateY(45deg);
+  -webkit-animation-name: opacity;
+          animation-name: opacity;
+  -webkit-animation-duration: 2s;
+          animation-duration: 2s;
+}
+
+@-webkit-keyframes opacity {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes opacity {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+/*# sourceMappingURL=index.css.map */

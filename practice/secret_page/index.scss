@@ -1,0 +1,22 @@
+.content {
+    height: 100vh;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: lightcyan;
+    text-align: center;
+
+    .mainImage {
+        width: 100%;
+    }
+
+    .message-div-child {
+        opacity: 0;
+        transition: opacity .5s;
+        transition-timing-function: cubic-bezier(.05,-0.43,.83,1.55);
+    }
+}

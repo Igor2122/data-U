@@ -19,6 +19,7 @@
     "gulp-sourcemaps": "^2.6.4"
   },
   "dependencies": {
+    "animate.css": "^3.7.0",
     "bootstrap": "^4.2.1"
   }
 }

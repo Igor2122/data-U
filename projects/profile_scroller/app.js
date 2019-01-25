@@ -27,14 +27,23 @@ const data = [{
 const profiles = profileIterator(data);
 //  Next Event 
 document.getElementById('next').addEventListener('click', nextProfile);
+document.getElementById('previous').addEventListener('click', nextProfile);
 
 // Next Profile display 
 
-function nextProfile() {
+function nextProfile(e) {
 
-    const currntProfile = profiles.next().value;
+    let currntProfile = '';
+    if (e.target.id === 'next') {
+        currntProfile = profiles.next().value;
+        console.log(e.target);
+    } else if(e.target.id === 'previous') {
+        currntProfile = profiles.previous().value;
+        console.log(profiles.previous().value);
+        console.log(e.target);
+    }
 
-    document.getElementById('profileDisplay').innerHTML  = `
+    document.getElementById('profileDisplay').innerHTML = `
     <ul class="list-group">
         <li class="list-group-item">Name: ${currntProfile.name}</li>
         <li class="list-group-item">Age: ${currntProfile.age}</li>
@@ -45,7 +54,7 @@ function nextProfile() {
     document.getElementById('imageDisplay').innerHTML = `
         <img src="${currntProfile.image}" >
     `
-    
+
 }
 
 //   Profile iterator
@@ -54,13 +63,21 @@ function profileIterator(profiles) {
 
     return {
         next: function () {
-           return nextIndex < profiles.length ?
-                {
-                    value: profiles[nextIndex++],
-                    done: false
-                } : {
-                    done: true
-                }
+            return nextIndex < profiles.length ? {
+                value: profiles[nextIndex++],
+                done: false
+            } : {
+                done: true
+            }
+
+        },
+        previous: function () {
+            return nextIndex < profiles.length ? {
+                value: profiles[nextIndex--],
+                done: false
+            } : {
+                done: true
+            }
         }
     };
 }
