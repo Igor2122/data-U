@@ -4,13 +4,6 @@ body {
     background: $main;
 }
 
-html,
-body {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
 
 .home {
     position: relative;
@@ -18,6 +11,7 @@ body {
     display: flex;
     flex-direction: column;
     background: center/cover no-repeat url('/img/home-background.jpg') #eee;
+    overflow: hidden;
 
     .logo {
         position: relative;
@@ -32,11 +26,18 @@ body {
     .overlay {
         position: absolute;
         top: 0;
-        left: 0;
-        height: 100%;
-        width: 100%;
+        left: -23%;
+        height: 168%;
+        width: 111%;
         background: rgba(20, 21, 46, 0.92);
         z-index: 0;
+        transform: skewY(-132deg);
+        @include mobile {
+            transform: skewY(0);
+            height: 100%;
+            width: 100%;
+            left: 0;
+        }
     }
 
     .intro {
