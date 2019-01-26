@@ -9,6 +9,11 @@
     align-items: center;
 }
 
+@mixin backgroundPattern {
+    background: $mian;
+    background-image: $background-pattern;
+}
+
 $mobile:  320px;
 $tablet: 480px;
 $desctop: 767px;

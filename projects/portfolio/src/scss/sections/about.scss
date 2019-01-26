@@ -3,7 +3,6 @@
 .about {
     height: 100vh;
     background: $mian;
-    // background: background-color: #313234;
     background-image: $background-pattern;
 
     @include mobile {
@@ -22,6 +21,32 @@
             flex-direction: column;
             height:  100%;
             padding: 1em 0;
+        }
+
+        .contact-buttons {
+            width: 60%;
+            // background: red;
+            display: flex;
+            justify-content: space-around;
+            
+            @include mobile {
+                width: 100%;
+            }
+            
+            .contact-button {
+                background: $highlight;
+                padding: .6em;
+                width: 7em;
+                border-radius: .9em;
+                color: #fff;
+                transition: all .2s ease-in;
+
+                &:hover {
+                    background: #fff;
+                    border: 1px solid $highlight;
+                    color: $highlight;
+                }
+            }
         }
 
         .img-div,
@@ -49,10 +74,14 @@
             h2 {
                 color: $highlight;
                 font-family: $main;
+                font-size: 2.5em;
             } 
             p {
                 color: #fff;
                 font-family: $secondary;
+                font-weight: 200;
+                font-size: 1.1em;
+                line-height: 1.3em;
             }
             @include mobile {
                 width: 90%;
