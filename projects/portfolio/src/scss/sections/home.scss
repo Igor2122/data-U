@@ -70,7 +70,9 @@ body {
                 display: none;
             }
 
-            .fa-arrow-down {}
+            .fa-arrow-down {
+                animation: hindDown .5s infinite ease-in-out;
+            }
         }
 
 
@@ -83,37 +85,4 @@ body {
 
     }
 
-
-
-    .navigation {
-        height: 10vh;
-        width: 100%;
-        align-self: flex-end;
-        margin: 0 auto;
-        background-color: $thirinery;
-        @include on-top;
-
-
-        nav {
-            display: flex;
-            justify-content: space-around;
-            align-items: center;
-            flex-direction: row;
-            height: 100%;
-            width: 80%;
-            margin: auto;
-
-
-
-            li {
-                list-style: none;
-
-                a {
-                    color: #fff;
-                    text-decoration: none;
-                }
-            }
-
-        }
-    }
 }
