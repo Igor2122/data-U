@@ -1,35 +1,78 @@
 @import "../base/base";
 
 .skills {
-    height: 50vh;
-    background: yellow;
+    height: 100vh;
     text-align: center;
+    position: relative;
+    color: #fff;
 
     @include mobile {
-        height: auto;
+        background: $mian;
+        background-image: $background-pattern;
     }
 
-    h2 {
-        padding: 1.5em 0 0;
-        margin: 0;
+    .skills-backdrop {
+        @include mobile {
+            display: none;
+        }
     }
 
+    .skills-dude {
+        position: absolute;
+        z-index: 1;
+        left: 15%;
+        top: 20%;
+        
+    }
 
-    .slills-card-parent {
+    .backdrop-skills {
+        position: absolute;
+        z-index: 1;
+        right: 0;
+        bottom: -10%;
+        height: 100%;
+
+        
+    }
+
+    .skills-layout {
         display: flex;
-        justify-content: space-around;
-        align-items: center;
-        width: 80%;
-        height: 70%;
-        margin: auto;
+        height: 100%;
 
         @include mobile {
-            flex-direction: row;
-            flex-wrap: wrap;
+            flex-direction: column;
         }
 
-        .skill-card img {
-            width: 20%;
+
+        .skills-left {
+            width: 60%;
+            height: 100%;
+
+            @include mobile {
+                width: 100%;
+            }
+        }
+
+        .skills-right {
+            width: 40%;
+            height: 100%;
+            @include vertical-Align;
+            justify-content: center;
+            position: relative;
+            z-index: 1;
+            text-align: center;
+
+            @include mobile {
+                order: -1;
+                width: 100%;
+            }
+
+            p {
+                width: 50%;
+                margin: auto;
+                padding: 2em 0;
+            }
+
         }
     }
 }
