@@ -22,7 +22,7 @@
         z-index: 1;
         left: 15%;
         top: 20%;
-        
+
     }
 
     .backdrop-skills {
@@ -32,7 +32,7 @@
         bottom: -10%;
         height: 100%;
 
-        
+
     }
 
     .skills-layout {
@@ -43,10 +43,42 @@
             flex-direction: column;
         }
 
-
         .skills-left {
             width: 60%;
             height: 100%;
+            display: flex;
+            align-items: flex-end;
+            justify-content: space-around;
+
+
+            .skills--boxes {
+                background: red;
+                background: $mian;
+                margin-bottom: 2em;
+                border-radius: .5em;
+                width: 30%;
+                height: 30%;
+                position: relative;
+                z-index: 5;
+
+                &:hover {
+                    animation: wiggle .3s;
+                    animation-delay: .1s;
+                    transform: scale(1.1);
+                    transition: all .3s ease-in;
+                }
+
+                &:nth-child(1) {
+                    position: relative;
+                    top: -5em;
+                }
+
+                h2 {
+                    padding-top: 2em;
+                }
+
+            }
+
 
             @include mobile {
                 width: 100%;
@@ -75,4 +107,30 @@
 
         }
     }
+}
+
+
+
+@keyframes wiggle {
+    0%  { transform: rotate(0deg); }
+    5%  { transform: rotate(5deg); }
+    10% { transform: rotate(-5deg); }
+    15% { transform: rotate(5deg); }
+    20% { transform: rotate(-5deg); }
+    25% { transform: rotate(5deg); }
+    30% { transform: rotate(-5deg); }
+    35% { transform: rotate(5deg); }
+    40% { transform: rotate(-5deg);}
+    45% { transform: rotate(5deg); }
+    50% { transform: rotate(-5deg); }
+    55% { transform: rotate(5deg); }
+    60% { transform: rotate(-5deg); }
+    65% { transform: rotate(5deg); }
+    70% { transform: rotate(-5deg); }
+    75% { transform: rotate(5deg); }
+    80% { transform: rotate(-5deg); }
+    85% { transform: rotate(5deg); }
+    90% { transform: rotate(-5deg);}
+    95% { transform: rotate(5deg);}
+    100% { transform: rotate(0deg);}
 }
