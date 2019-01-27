@@ -31,6 +31,11 @@ function htmlPublish(done) {
       .pipe(livereload());
 }
 
+function jsPublish(done){
+    return gulp.src('src/assets/**/*.js')
+    .pipe(gulp.dest('public'))
+}
+
 // compile SCSS files
 function scssCompile(done) {
     return gulp.src('src/scss/**/*.scss')
@@ -50,6 +55,7 @@ function scssCompile(done) {
 function watchFiles(done) {
     gulp.watch("src/assets/**/*.html", htmlPublish);
     gulp.watch("src/scss/**/*.scss", scssCompile);
+    gulp.watch("src/scss/**/*.js", jsPublish);
 }
 
 // start livereload

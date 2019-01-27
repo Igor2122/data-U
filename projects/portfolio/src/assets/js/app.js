@@ -19,8 +19,14 @@ const scrollEvents = (e) => {
     projectCards[0].addEventListener("mousemove", (e) => {
         projectCards[0].style.backgroundPositionX = -e.offsetX/7 + "px";
         projectCards[0].style.backgroundPositionY = -e.offsetY /15+ "px";
-        console.log(e.offsetY);
-        projectCards[0].setAttribute('style', `transform: rotate3d(1, 1, 1, ${parseInt(-e.offsetY/12)}deg); transform-style: preserve-3d;`);
+        // console.log(e.offsetY);
+
+        let centerX = (projectCards[0].offsetLeft + projectCards[0].offsetWidth /2)-e.offsetX;
+		console.log('TCL: scrollEvents -> centerX', centerX)
+        
+
+        
+        // projectCards[0].setAttribute('style', `transform: translate3d(${centerX}px, ${centerX}px, ${centerX}px, ${parseInt(e.offsetY/12)}deg); `);
       });
 }
 
@@ -28,6 +34,6 @@ const scrollEvents = (e) => {
 
 
 
-
+// alert('hello');
 
 document.addEventListener('DOMContentLoaded', scrollEvents);
