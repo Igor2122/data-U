@@ -1,6 +1,7 @@
 @import "../base/base";
+
 .skills-layout {
-    background:  no-repeat url('../../img/dude-no-background.png');
+    background: no-repeat url('../../img/dude-no-background.png');
     background-position: left 10% bottom 5%;
 }
 
@@ -10,8 +11,16 @@
     text-align: center;
     position: relative;
     color: #fff;
+
     @include mobile {
         height: 100%;
+    }
+
+    &>h2 {
+        color: black;
+        position: absolute;
+        top: 10%;
+        left: 10%;
     }
 
     @include mobile {
@@ -48,6 +57,7 @@
             display: flex;
             align-items: flex-end;
             justify-content: space-around;
+
             @include mobile {
                 display: flex;
                 flex-direction: column;
@@ -70,13 +80,14 @@
 
                 .overlay {
                     @include overlay;
+                    border-radius: .5em;
                 }
 
                 @include mobile {
                     width: 100%;
                     margin-top: 15%;
                 }
-                
+
                 .learn-more {
                     @include buttons;
                     width: 9em;
@@ -84,27 +95,51 @@
                     margin-top: 1em;
                 }
 
+                .skill-one {
+                    top: 0;
+                    left: 0;
+                }
+
+                .skill-two {
+                    bottom: 0;
+                    left: 0;
+                }
+
+                .skill-three {
+                    top: 0;
+                    right: 0;
+                }
+
+                .skill-four {
+                    bottom: 0;
+                    right: 0;
+                }
+
+
                 &:hover {
                     animation: wiggle .3s;
                     animation-delay: .1s;
                     transform: scale(1.05);
                     transition: all .3s ease-in;
                     cursor: pointer;
-                    
+
                     .skill-one {
-                        transform: scale(1.1) rotate(-5deg) translate(-1em, -.1em);
+                        transform: scale(1.1) rotate(-5deg) translate(-2.5em, -.1em);
                         transition: all .3s .3s ease-in;
                     }
+
                     .skill-two {
-                        transform: scale(1.1) rotate(-10deg) translate(-.1em, -.5em);
+                        transform: scale(1.1) rotate(-10deg) translate(-2.5em, -.5em);
                         transition: all .3s .45s ease-in;
                     }
+
                     .skill-three {
                         transition: all .3s .4s ease-in;
-                        transform: scale(1.1) rotate(-5deg) translate(.1em, -.5em);
+                        transform: scale(1.1) rotate(5deg) translate(2.5em, -.5em);
                     }
+
                     .skill-four {
-                        transform: scale(1.1) rotate(-10deg) translate(1em, -.1em);
+                        transform: scale(1.1) rotate(10deg) translate(2.5em, -.1em);
                         transition: all .3s .32s ease-in;
                     }
                 }
@@ -161,6 +196,3 @@
         }
     }
 }
-
-
-
