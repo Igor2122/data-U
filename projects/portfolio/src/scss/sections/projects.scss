@@ -46,7 +46,7 @@
             width: 24%;
             height: 30em;
             background: red;
-            transition: transform .1s ease-in;
+            // transition: transform 1s ease-in;
 
             &:nth-child(1){
                 background: center/cover no-repeat url('../../img/project/marwan-page.png');
