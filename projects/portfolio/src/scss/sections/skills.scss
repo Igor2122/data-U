@@ -15,7 +15,7 @@
     }
 
     @include mobile {
-        background: $mian;
+        background: $mian-color;
         background-image: $background-pattern;
     }
 
@@ -25,13 +25,6 @@
         }
     }
 
-    .skills-dude {
-        position: absolute;
-        z-index: 1;
-        left: 15%;
-        top: 20%;
-
-    }
 
     .backdrop-skills {
         position: absolute;
@@ -39,8 +32,6 @@
         right: 0;
         bottom: -10%;
         height: 100%;
-
-
     }
 
     .skills-layout {
@@ -67,10 +58,19 @@
                 position: relative;
                 width: 30%;
                 height: 30%;
-                background: $mian;
+                background: $mian-color;
                 margin-bottom: 2em;
                 border-radius: .5em;
                 z-index: 99;
+
+                .content {
+                    position: relative;
+                    z-index: 50;
+                }
+
+                .overlay {
+                    @include overlay;
+                }
 
                 @include mobile {
                     width: 100%;

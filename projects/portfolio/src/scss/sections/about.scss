@@ -2,7 +2,7 @@
 
 .about {
     height: 100vh;
-    background: $mian;
+    background: $mian-color;
     background-image: $background-pattern;
     color: #fff;
 
@@ -82,7 +82,7 @@
 
             h2 {
                 // color: $highlight;
-                font-family: $main;
+                font-family: $mian-color;
                 font-size: 2.5em;
             }
 

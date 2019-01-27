@@ -20,6 +20,16 @@
     width: 10em;
 }
 
+@mixin overlay {
+    position: absolute;
+    z-index: 0;
+    height: 100%;
+    width: 100%;
+    left: 0;
+    right: 0;
+    background: $mian-color;
+}
+
 @mixin buttons  {
     background: $highlight;
                 padding: .6em;
