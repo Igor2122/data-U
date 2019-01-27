@@ -1,7 +1,53 @@
 @import '../base/base';
 
+#projects {
+    position: relative;
+
+    &>h2{
+        // color: black;
+        color: #fff;
+        position: absolute;
+        top: 10%;
+        left: 5%;
+        transform: rotate(-90deg);
+        padding-bottom: .5em;
+
+        &:after {
+            position: absolute;
+            left: .5em;
+            top: .3em;
+            content: '';
+            height: 1em;
+            width: 3em;
+            border-bottom: 1px solid $highlight;
+        }
+    }
+}
+
 .projects-parent {
-    height: 100vh;
     background: #272F44;
     background-image: $background-pattern;
+    @include vertical-Align;
+    justify-content: center;
+
+    .projects-container {
+        margin-top: 12em;
+        height: 60%;
+        width: 90%;
+        // background: yellow;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+        align-items: center;
+
+        .project-card {
+            margin:  3%;
+            width: 20%;
+            height: 30em;
+            background: red;
+            @include mobile {
+                width: 90%;
+            }
+        }
+    }
 }
