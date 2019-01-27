@@ -19,10 +19,10 @@ const scrollEvents = (e) => {
     projectCards[0].addEventListener("mousemove", (e) => {
         projectCards[0].style.backgroundPositionX = -e.offsetX/7 + "px";
         projectCards[0].style.backgroundPositionY = -e.offsetY /15+ "px";
-        // console.log(e.offsetY);
+        console.log(e.offsetY);
 
-        let centerX = (projectCards[0].offsetLeft + projectCards[0].offsetWidth /2)-e.offsetX;
-		console.log('TCL: scrollEvents -> centerX', centerX)
+        // let centerX = (projectCards[0].offsetLeft + projectCards[0].offsetWidth /2)-e.offsetX;
+		// console.log('TCL: scrollEvents -> centerX', centerX)
         
 
         
@@ -34,6 +34,6 @@ const scrollEvents = (e) => {
 
 
 
-// alert('hello');
+
 
 document.addEventListener('DOMContentLoaded', scrollEvents);
