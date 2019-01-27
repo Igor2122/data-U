@@ -14,6 +14,28 @@
     background-image: $background-pattern;
 }
 
+@mixin social-media-div {
+    display: flex;
+    justify-content: space-between;
+    width: 10em;
+}
+
+@mixin buttons  {
+    background: $highlight;
+                padding: .6em;
+                width: 7em;
+                border-radius: .9em;
+                color: #fff;
+                transition: all .2s ease-in;
+                cursor: pointer;
+
+                &:hover {
+                    background: #fff;
+                    border: 1px solid $highlight;
+                    color: $highlight;
+                }
+}
+
 
 
 $mobile:  320px;
@@ -57,7 +79,7 @@ $large-desctop: 1024;
     100% { transform: rotate(0deg);}
 }
 
-@keyframes hindDown {
+@keyframes hintDown {
     0% { transform: translateY(0);}
     50% { transform: translateY(.2em);}
     100% { transform: translateY(0);}

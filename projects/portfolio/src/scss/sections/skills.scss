@@ -1,10 +1,18 @@
 @import "../base/base";
+.skills-layout {
+    background:  no-repeat url('../../img/dude-no-background.png');
+    background-position: left 10% bottom 5%;
+}
+
 
 .skills {
     height: 100vh;
     text-align: center;
     position: relative;
     color: #fff;
+    @include mobile {
+        height: 100%;
+    }
 
     @include mobile {
         background: $mian;
@@ -49,7 +57,11 @@
             display: flex;
             align-items: flex-end;
             justify-content: space-around;
-
+            @include mobile {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
 
             .skills--boxes {
                 position: relative;
@@ -58,36 +70,41 @@
                 background: $mian;
                 margin-bottom: 2em;
                 border-radius: .5em;
+                z-index: 99;
+
+                @include mobile {
+                    width: 100%;
+                    margin-top: 15%;
+                }
+                
+                .learn-more {
+                    @include buttons;
+                    width: 9em;
+                    padding: 0;
+                    margin-top: 1em;
+                }
 
                 &:hover {
                     animation: wiggle .3s;
                     animation-delay: .1s;
-                    transform: scale(1.1);
+                    transform: scale(1.05);
                     transition: all .3s ease-in;
-
+                    cursor: pointer;
                     
-                    .js {
-                        top: 0;
-                        left: -25%;                        
-                        transform: scale(1.1) rotate(-5deg);
+                    .skill-one {
+                        transform: scale(1.1) rotate(-5deg) translate(-1em, -.1em);
                         transition: all .3s .3s ease-in;
                     }
-                    .css {
-                        left: -25%;                      
-                        bottom: -10%;  
-                        transform: scale(1.1) rotate(-10deg);
+                    .skill-two {
+                        transform: scale(1.1) rotate(-10deg) translate(-.1em, -.5em);
                         transition: all .3s .45s ease-in;
                     }
-                    .react {
-                        right: -25%;
-                        top: 0;
+                    .skill-three {
                         transition: all .3s .4s ease-in;
-                        transform: scale(1.1) rotate(-5deg);
+                        transform: scale(1.1) rotate(-5deg) translate(.1em, -.5em);
                     }
-                    .wbpack {
-                        right: -25%;
-                        bottom: -8%;
-                        transform: scale(1.1) rotate(-15deg);
+                    .skill-four {
+                        transform: scale(1.1) rotate(-10deg) translate(1em, -.1em);
                         transition: all .3s .32s ease-in;
                     }
                 }
@@ -104,26 +121,9 @@
                 .tech-logos {
                     width: 20%;
                     position: absolute;
-                    z-index: -99;    
+                    z-index: -99;
                 }
 
-                .js {
-                    left: 0;
-                }
-
-                .react {
-                    right: 0;
-                
-                }
-                .wbpack {
-                    right: 0;
-                    bottom: 0;
-                }
-
-                .css {
-                    left: 0;
-                    bottom: 0;
-                }
 
             }
 
@@ -151,6 +151,11 @@
                 width: 50%;
                 margin: auto;
                 padding: 2em 0;
+            }
+
+            .social-media {
+                @include social-media-div;
+                margin: auto;
             }
 
         }

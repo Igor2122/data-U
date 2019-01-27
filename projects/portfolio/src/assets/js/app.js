@@ -5,6 +5,7 @@ const scrollEvents = (e) => {
     window.addEventListener('scroll', () => {
         
          offsetY = window.pageYOffset;
+        //  console.log(offsetY);
         const navigation = document.querySelector('.navigation');
         if(offsetY > 620){
             navigation.setAttribute('style', 'position: fixed; background: rgba(125,130,142, .9)');

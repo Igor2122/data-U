@@ -71,15 +71,13 @@ body {
             }
 
             .fa-arrow-down {
-                animation: hindDown .5s infinite ease-in-out;
+                animation: hintDown .5s infinite ease-in-out;
             }
         }
 
 
         .social-media {
-            display: flex;
-            justify-content: space-between;
-            width: 10em;
+            @include social-media-div;
         }
 
 
