@@ -8,9 +8,10 @@ class Book {
         available = this.available;
     }
 
-    bookList() {
+    bookList(val) {
         const bookList = [{
             title: 'Pulp Fiction',
+            shortDescription: 'Dialogue drives Quentin Tarantino\'s "Pulp Fiction, dialogue of such high quality it deserves comparison with other masters of spare, hard-boiled prose, from Raymond Chandler to Elmore Leonard.',
             director: 'Quentin Tarantino',
             image: 'https://static.rogerebert.com/uploads/movie/movie_poster/pulp-fiction-1994/large_dM2w364MScsjFf8pfMbaWUcWrR.jpg',
             genre: ['Action', 'Crime', 'Thriller'],
@@ -18,6 +19,7 @@ class Book {
             available: true,
             takenHome: false
         }]
+        bookList.push(val);
         return bookList;
     }
 
@@ -32,22 +34,19 @@ class Book {
     }
 
     takeHome(val, replyTrue, replyFalse) {
-
         return val ? replyTrue : replyFalse;
-
     }
 
     renderBook() {
         let books = this.bookList();
 
         for (let book of books) {
-
             let bookOutput = document.createElement('div');
             bookOutput.innerHTML = `<div class="card" style="width: 18rem;">
             <img src=${book.image} class="card-img-top" alt="...">
             <div class="card-body">
             <h5 class="card-title">${book.title}</h5>
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+            <p class="card-text">${book.shortDescription}</p>
             </div>
             <ul class="list-group list-group-flush">
             <li class="list-group-item">Director: ${book.director}</li>
@@ -67,6 +66,8 @@ class Book {
             bookParent.appendChild(bookOutput);
 
         }
+
+        
     }
 
 

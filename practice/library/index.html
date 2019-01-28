@@ -1,32 +1,85 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <title>Libraty Book</title>
-  </head>
-  <body>
-      <div class="container">
-          <h1>Get Your Books!</h1>
-          <div class="spacer m-5"></div>
-          <div class="books d-flex justify-content-between">
-                
-          </div>
-      </div>
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS"
+    crossorigin="anonymous">
 
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
-    <script src="./book.js"></script>
-    <script src="./app.js"></script>
-    <script src="./ui.js"></script>
-    <script src="./user.js"></script>
-  </body>
+  <title>Libraty Book</title>
+</head>
+
+<body>
+  <div class="container">
+    <h1>Get Your Books!</h1>
+    <div class="spacer m-5"></div>
+    <div class="books d-flex justify-content-between"></div>
+
+    <div class="spacer m-5"></div>
+
+    <!-- Add new moveis -->
+    <div class="addNewMovie">
+      <form class="new-movie-form">
+        <div class="form-group">
+          <label for="movieName">Movie Name</label>
+          <input type="text" class="form-control" id="movieName" aria-describedby="addmovie" placeholder="Enter Movie Name">
+        </div>
+        <div class="form-group">
+          <label for="shortDescription">Short Description</label>
+          <textarea class="form-control" id="shortDescription" rows="3" placeholder="Add Movie Description"></textarea>
+        </div>
+        <div class="form-group">
+          <label for="director">Director</label>
+          <input type="text" class="form-control" id="director" aria-describedby="director" placeholder="Enter Director Name">
+        </div>
+        <div class="form-group">
+          <label for="genre">Genre</label>
+          <input type="text" class="form-control" id="gentre" aria-describedby="director" placeholder="Enter Genre">
+        </div>
+        <div class="form-group">
+          <label for="rated">Rated</label>
+          <select class="form-control" id="rated">
+            <option>R</option>
+            <option>No R</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="available">Available</label>
+          <select class="form-control" id="available">
+            <option>Yes</option>
+            <option>No</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="takeHome">Take Home</label>
+          <select class="form-control" id="takeHome">
+            <option>Yes</option>
+            <option>No</option>
+          </select>
+        </div>
+
+
+        <button type="submit" class="getValuesButton" class="btn btn-primary">Submit</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Optional JavaScript -->
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
+    crossorigin="anonymous"></script>
+  <script src="./user.js"></script>
+  <script src="./book.js"></script>
+  <script src="./app.js"></script>
+  <script src="./ui.js"></script>
+</body>
+
 </html>
