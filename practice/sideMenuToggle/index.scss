@@ -15,6 +15,10 @@ body {
             transition: opacity .3s .2s ease-in;
         }
 
+        .burger-logo {
+            margin-top: 2em;
+        }
+
         .menu-toggle-block {
             display: flex;
             justify-content: space-between;
@@ -59,4 +63,14 @@ body {
 
 .animated {
     width: 30%;
+}
+
+.red {
+    color: red;
+}
+.green {
+    color: green;
+}
+.blue {
+    color: blue;
 }

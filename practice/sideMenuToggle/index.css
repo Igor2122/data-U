@@ -21,6 +21,10 @@ body main h2 {
   transition: opacity .3s .2s ease-in;
 }
 
+body main .burger-logo {
+  margin-top: 2em;
+}
+
 body main .menu-toggle-block {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -72,5 +76,17 @@ body main article p {
 
 .animated {
   width: 30%;
+}
+
+.red {
+  color: red;
+}
+
+.green {
+  color: green;
+}
+
+.blue {
+  color: blue;
 }
 /*# sourceMappingURL=index.css.map */
