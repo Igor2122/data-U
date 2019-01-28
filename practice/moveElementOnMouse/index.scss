@@ -1,0 +1,15 @@
+.parent {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    background: lightcyan;
+    width: 100%;
+    perspective: 30px;
+
+    .children {
+        width: 24%;
+        height: 25em;
+        margin: 3em;
+        background: lightgreen;
+    }
+}

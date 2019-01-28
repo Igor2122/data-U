@@ -1,0 +1,62 @@
+body {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    background: lightcyan;
+    height: 100vh;
+
+    main {
+        display: flex;
+        height: 100%;
+
+        .menu,
+        h2 {
+            opacity: 0;
+            transition: opacity .3s .2s ease-in;
+        }
+
+        .menu-toggle-block {
+            display: flex;
+            justify-content: space-between;
+            width: 50%;
+        }
+
+        aside {
+            width: 10%;
+            background: blue;
+            transition: width .5s ease-in;
+
+            ul {
+                display: flex;
+                flex-direction: column;
+
+                li {
+                    margin: 1em 0;
+                    text-decoration: none;
+                    list-style: none;
+                    text-transform: capitalize;
+                    color: #fff;
+                    font-size: 1.5em;
+                }
+            }
+
+        }
+
+        article {
+            width: 60%;
+
+            h1 {
+                padding: 1em 3em 0 ;
+                margin: auto;
+            }
+
+            p {
+                padding: 3em;
+            }
+        }
+    }
+}
+
+.animated {
+    width: 30%;
+}

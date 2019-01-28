@@ -1,0 +1,22 @@
+.parent {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  background: lightcyan;
+  width: 100%;
+  -webkit-perspective: 30px;
+          perspective: 30px;
+}
+
+.parent .children {
+  width: 24%;
+  height: 25em;
+  margin: 3em;
+  background: lightgreen;
+}
+/*# sourceMappingURL=index.css.map */
