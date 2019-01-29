@@ -9,11 +9,12 @@ const createElement = (val) => {
         <img class="w-25 img" src="./img/${val.name.toLowerCase()}.png" alt="local" >
         <span class="badge badge-primary badge-pill">${val.text}</span>
     `
+    let image = li.querySelector('img');
     return li;
     
 }
 for (let chat of conversation) {
-        createElement(chat);
+        // createElement(chat);
         chatBox.appendChild(createElement(chat));
         
 }
@@ -23,4 +24,7 @@ for (let chat of conversation) {
             alert('don\'t click on my head ');
         })
     }
+
+    // delete message 
+    let delmsg = document.querySelector('.message');
 })
