@@ -4,12 +4,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const bookParent = document.querySelector('.books');
     
+    // retreving Saved Movies From Local Storage
+    let moviesFromLocalStorage = displayBooks.retrevingBooksFromLocalStorage();
 
-    for(let book of booksDatabase){
+    for(let book of moviesFromLocalStorage){
         bookParent.appendChild(displayBooks.renderAllBooks(book));;
     }
-
-
 
     // displayBooks.renderBook(booksDatabase);
     displayBooks.getInputValues();

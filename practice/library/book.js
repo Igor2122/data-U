@@ -49,7 +49,7 @@ class Book {
 
         const getValues = (e) => {
             e.preventDefault();
-
+            // Getting Values from the input form
             if (e.target.className === 'getValuesButton') {
                 let title = document.getElementById('movieName').value;
                 let shortDescription = document.getElementById('shortDescription').value;
@@ -58,19 +58,38 @@ class Book {
                 let gentre = document.getElementById('gentre').value;
                 let available = this.renderTrueFalse(document.getElementById('available').value);
                 let takenHome = this.renderTrueFalse(document.getElementById('takeHome').value);
-
+                // Creating new Book Object
                 const CreatedBookFromUserInput = new Book(
                     title, shortDescription, director, image, gentre, available, takenHome
                 );
+                // Pushing new Object to virtual Database
                 booksDatabase.push(CreatedBookFromUserInput);
-                console.log(booksDatabase);
-                
+                // Rendering last added Book to the UI
                 this.appendAddedBookToUI(booksDatabase);
+                // Adding Data to local Storage
+                this.addDataToLocalStorage(title);
+
+                // In case local Storeage needs to be reset manually
+                // this.resetLocalStorage();
             }
 
         }
 
         newMovieForm.addEventListener('click', getValues);
+    }
+
+    // Local Srorage stuff
+    addDataToLocalStorage (key) {
+        localStorage.setItem(key, JSON.stringify(booksDatabase));
+    }
+
+    retrevingBooksFromLocalStorage () {
+        const data = JSON.parse(localStorage.getItem('ROCKNROLLA'));
+        return data;
+    }
+
+    resetLocalStorage () {
+        localStorage.clear();
     }
 
 
