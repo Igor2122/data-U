@@ -1,3 +1,38 @@
+const displayBooks = new Book();
+
+// displayBooks.renderBook(booksDatabase);
+displayBooks.getInputValues();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 // const allProducts = [];
 
 // const newProduct = (val1, val2) => {
@@ -17,9 +52,4 @@
 
 // console.log(allProducts);
 
-const BookObj = new Book();
-BookObj.renderBook();
 
-const UserInput = new User();
-UserInput.getInputValues();
-BookObj.addBookToList(UserInput.getInputValues());
