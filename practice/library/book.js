@@ -8,7 +8,15 @@ class Book {
         available = this.available;
     }
 
-    bookList(val) {
+    addBookToList (val){
+        let res = this.bookList();
+        if(val){
+            res.push(val);
+            console.log(res);
+        }
+    }
+
+    bookList() {
         const bookList = [{
             title: 'Pulp Fiction',
             shortDescription: 'Dialogue drives Quentin Tarantino\'s "Pulp Fiction, dialogue of such high quality it deserves comparison with other masters of spare, hard-boiled prose, from Raymond Chandler to Elmore Leonard.',
@@ -19,7 +27,7 @@ class Book {
             available: true,
             takenHome: false
         }]
-        bookList.push(val);
+        console.log(bookList);
         return bookList;
     }
 
@@ -39,7 +47,7 @@ class Book {
 
     renderBook() {
         let books = this.bookList();
-
+        if(books.length > 0){
         for (let book of books) {
             let bookOutput = document.createElement('div');
             bookOutput.innerHTML = `<div class="card" style="width: 18rem;">
@@ -64,7 +72,7 @@ class Book {
 
             const bookParent = document.querySelector('.books');
             bookParent.appendChild(bookOutput);
-
+        }
         }
 
         

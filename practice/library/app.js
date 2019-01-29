@@ -22,5 +22,4 @@ BookObj.renderBook();
 
 const UserInput = new User();
 UserInput.getInputValues();
-
-BookObj.bookList(UserInput.getInputValues);
+BookObj.addBookToList(UserInput.getInputValues());

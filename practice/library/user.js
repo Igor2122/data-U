@@ -1,3 +1,5 @@
+const tempBook = new Book();
+
 class User {
     
 
@@ -44,16 +46,16 @@ class User {
                         i.value = 'please input this field';
                     }
                 }
-
                 console.log(newMovie);
                 return newMovie;
             }
-
-
+            
+            
         }
-
-
-
+        
+        
+        
+        // tempBook.renderBook();
 
 
         newMovieForm.addEventListener('click', getValues);
