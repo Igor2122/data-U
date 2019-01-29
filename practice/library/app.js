@@ -1,7 +1,21 @@
-const displayBooks = new Book();
+document.addEventListener('DOMContentLoaded', () => {
+    const displayBooks = new Book();
 
-// displayBooks.renderBook(booksDatabase);
-displayBooks.getInputValues();
+
+    const bookParent = document.querySelector('.books');
+    
+
+    for(let book of booksDatabase){
+        bookParent.appendChild(displayBooks.renderAllBooks(book));;
+    }
+
+
+
+    // displayBooks.renderBook(booksDatabase);
+    displayBooks.getInputValues();
+})
+
+
 
 
 
@@ -51,5 +65,3 @@ displayBooks.getInputValues();
 // console.log(groceryListObj);
 
 // console.log(allProducts);
-
-

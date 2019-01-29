@@ -10,42 +10,37 @@ class Book {
         this.takenHome = true
     }
 
-    addBookToList(arr, val) {
-        if (val) {
-            arr.push(val);
-        }
+
+    renderAllBooks(val) {
+        
+                let bookOutput = document.createElement('div');
+                bookOutput.innerHTML = `
+                <div class="card" style="width: 18rem;">
+                    <img src=${val.image} class="card-img-top" alt="...">
+                    <div class="card-body">
+                    <h5 class="card-title">${val.title}</h5>
+                    <p class="card-text">${val.shortDescription}</p>
+                    </div>
+                    <ul class="list-group list-group-flush">
+                    <li class="list-group-item">Director: ${val.director}</li>
+                    <li class="list-group-item">Gentre: ${this.outputArray(val.genre)}</li>
+                    <li class="list-group-item">Rated: ${val.rated}</li>
+                    
+                    <li class="list-group-item">Available: ${this.takeHome(val.available, 'Knock Yourself out!', 'Read Here Only')}</li>
+                    <li class="list-group-item">Taken Home: ${this.takeHome(val.takenHome, 'OK', 'No, Sorry')}</li>
+                    </ul>
+                    <div class="card-body">
+                    <a href="#" class="card-link">Card link</a>
+                    <a href="#" class="card-link">Another link</a>
+                    </div>
+                </div>`;
+                return bookOutput;
     }
 
-    renderBook(BookArray) {
-        if (BookArray.length > 0) {
-            for (let book of BookArray) {
-                let bookOutput = document.createElement('div');
-                bookOutput.innerHTML = `<div class="card" style="width: 18rem;">
-            <img src=${book.image} class="card-img-top" alt="...">
-            <div class="card-body">
-            <h5 class="card-title">${book.title}</h5>
-            <p class="card-text">${book.shortDescription}</p>
-            </div>
-            <ul class="list-group list-group-flush">
-            <li class="list-group-item">Director: ${book.director}</li>
-            <li class="list-group-item">Gentre: ${this.outputArray(book.genre)}</li>
-            <li class="list-group-item">Rated: ${book.rated}</li>
-            
-            <li class="list-group-item">Available: ${this.takeHome(book.available, 'Knock Yourself out!', 'Read Here Only')}</li>
-            <li class="list-group-item">Taken Home: ${this.takeHome(book.takenHome, 'OK', 'No, Sorry')}</li>
-            </ul>
-            <div class="card-body">
-            <a href="#" class="card-link">Card link</a>
-            <a href="#" class="card-link">Another link</a>
-            </div>
-            </div>`;
-
-                const bookParent = document.querySelector('.books');
-                bookParent.appendChild(bookOutput);
-            }
-        }
-
-
+    appendAddedBookToUI (val) {
+        const bookParent = document.querySelector('.books');
+        let lastBookAdded = val[val.length -1];
+        bookParent.appendChild(this.renderAllBooks(lastBookAdded));
     }
 
     getInputValues() {
@@ -53,15 +48,13 @@ class Book {
         const newMovieForm = document.querySelector('.new-movie-form');
 
         const getValues = (e) => {
-            
             e.preventDefault();
 
             if (e.target.className === 'getValuesButton') {
-
                 let title = document.getElementById('movieName').value;
                 let shortDescription = document.getElementById('shortDescription').value;
                 let director = document.getElementById('director').value;
-                let image = document.getElementById('gentre').value;
+                let image = document.getElementById('iamgeUrl').value;
                 let gentre = document.getElementById('gentre').value;
                 let available = this.renderTrueFalse(document.getElementById('available').value);
                 let takenHome = this.renderTrueFalse(document.getElementById('takeHome').value);
@@ -72,7 +65,7 @@ class Book {
                 booksDatabase.push(CreatedBookFromUserInput);
                 console.log(booksDatabase);
                 
-                this.renderBook(booksDatabase);
+                this.appendAddedBookToUI(booksDatabase);
             }
 
         }
@@ -83,7 +76,6 @@ class Book {
 
     // helper functions 
     outputArray(val) {
-        
         return val;
     }
 
