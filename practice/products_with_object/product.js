@@ -20,31 +20,30 @@ class Product {
         <button type="button" class="w-25 btn btn-secondary">Get Quantity</button>
     </div>
     `
-        // const purchaseButton = div.querySelector('.purchaseButton');
-        // let quantityLeft = div.querySelector('.quantity');
-        
-        // purchaseButton.addEventListener('click', () => {
-        //     let currentQuantity = parseInt(quantityLeft.innerText);
-        //     quantityLeft.textContent = currentQuantity - 1;
-        // })
-        return div;
-    }
+    const purchaseButton = div.querySelector('.purchaseButton');
+    purchaseButton.addEventListener('click', () => {
+        this.sell();
+    })
+    return div;
+}
 
-    sell ()  {
-        let res = this.quantity - 1
+sell ()  {
+    let quantityLeft = document.querySelector('.quantity');
+    let res = this.quantity -= 1
+    quantityLeft = res;
         console.log(res);
     }
     
-    purchaseItem () {
-        const purchaseButtons = document.querySelectorAll('.purchaseButton');
-        for(let button of purchaseButtons) {
-            button.addEventListener('click', (e) => {
-                const currentStockLeft = e.target.parentNode.parentNode.childNodes[1].childNodes[1].textContent;
-                let currentStock = e.target.parentNode.parentNode.childNodes[1].childNodes[1];
-                currentStock.textContent = parseInt(currentStockLeft) - 1;
-            })
-        }
-    }
+    // purchaseItem () {
+    //     const purchaseButtons = document.querySelectorAll('.purchaseButton');
+    //     for(let button of purchaseButtons) {
+    //         button.addEventListener('click', (e) => {
+    //             const currentStockLeft = e.target.parentNode.parentNode.childNodes[1].childNodes[1].textContent;
+    //             let currentStock = e.target.parentNode.parentNode.childNodes[1].childNodes[1];
+    //             currentStock.textContent = parseInt(currentStockLeft) - 1;
+    //         })
+    //     }
+    // }
     
 
 }
