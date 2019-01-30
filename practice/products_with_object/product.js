@@ -1,49 +1,63 @@
 class Product {
+
     constructor(name, price, quantity) {
         this.name = name;
         this.price = price;
         this.quantity = quantity;
     }
 
-    creteProductItem(val) {
-        let div = document.createElement('li');
-        div.innerHTML =
-            `
-    <li class="list-group-item d-flex justify-content-between align-items-center">
-    
-    <span class="badge badge-primary badge-pill">${val.price}</span>
-    <span class="badge badge-primary badge-pill">${val.name}</span>
-        <span class="badge badge-primary badge-pill quantity">${val.quantity}</span>
-    </li>
-    <div class="btn-group d-flex justify-content-between align-items-center" role="group" aria-label="Basic example">
-        <button type="button" class="w-25 btn btn-secondary purchaseButton">Buy</button>
-        <button type="button" class="w-25 btn btn-secondary">Get Quantity</button>
-    </div>
-    `
-    const purchaseButton = div.querySelector('.purchaseButton');
-    purchaseButton.addEventListener('click', () => {
-        this.sell();
-    })
-    return div;
-}
-
-sell ()  {
-    let quantityLeft = document.querySelector('.quantity');
-    let res = this.quantity -= 1
-    quantityLeft = res;
-        console.log(res);
+    sell() {
+        this.quantity--;
+        this.update();
     }
     
-    // purchaseItem () {
-    //     const purchaseButtons = document.querySelectorAll('.purchaseButton');
-    //     for(let button of purchaseButtons) {
-    //         button.addEventListener('click', (e) => {
-    //             const currentStockLeft = e.target.parentNode.parentNode.childNodes[1].childNodes[1].textContent;
-    //             let currentStock = e.target.parentNode.parentNode.childNodes[1].childNodes[1];
-    //             currentStock.textContent = parseInt(currentStockLeft) - 1;
-    //         })
-    //     }
-    // }
-    
+    buy() {
+        this.quantity++;
+        this.update()
+        console.log('supposed to update')
+    }
+
+    update() {
+        this.div.querySelector('.quantity').textContent = this.quantity;
+    }
+
+    render() {
+        this.div = document.createElement('li');
+        this.div.innerHTML =
+            `<li class="list-group-item d-flex justify-content-between align-items-center">
+                <span class="badge badge-primary badge-pill">${this.price}</span>
+                <span class="badge badge-primary badge-pill">${this.name}</span>
+                <span class="badge badge-primary badge-pill quantity">${this.quantity}</span>
+            </li>
+            <div class="btn-group d-flex justify-content-between align-items-center" role="group" aria-label="Basic example">
+                <button type="button" class="w-25 btn btn-secondary purchaseButton">Buy</button>
+                <button type="button" class="w-25 btn btn-secondary sellButton"> Sell</button>
+            </div>`
+
+        const purchaseButton = this.div.querySelector('.purchaseButton');
+        const sellButton = this.div.querySelector('.sellButton');
+        purchaseButton.addEventListener('click', () => {
+            this.sell();
+        });
+        sellButton.addEventListener('click', () => {
+            this.buy();
+        });
+
+        return this.div;
+    }
+
+
+    mount(parent) {
+        parent.appendChild(this.render());
+        this.update();
+    }
+
+
+
+
+
+
+
+
 
 }
