@@ -1,8 +1,9 @@
 class Robot {
-    constructor(side, name, text) {
+    constructor(side, name, text, counter) {
         this.side = side;
         this.name = name;
         this.text = text;
+        this.counter = 0;
     }
 
     render() {
@@ -21,8 +22,25 @@ class Robot {
         return this.element;
     }
 
+    renderSingle(robotGiven) {
+        let robotG = document.createElement('li');
+        robotG.className = 'list-group-item d-flex justify-content-between align-items-center';
+        robotG.innerHTML = `
+        <span class="badge badge-primary badge-pill">${robotGiven.side}</span>
+        <img class="w-25 img head" src="./img/${robotGiven.name.toLowerCase()}.png" alt="local" >
+        <span class="badge badge-primary badge-pill">${robotGiven.text}</span>
+        `
+        
 
-    mount(parent) {
+        return robotG;
+    }
+
+    mount(parent){
         parent.appendChild(this.render());
+    }
+
+    mountKeyPress(parent, array) {
+        parent.appendChild(this.renderSingle(array[this.counter]));
+        this.counter++;
     }
 }
