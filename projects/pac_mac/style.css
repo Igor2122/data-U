@@ -17,10 +17,7 @@ body {
 }
 
 .field {
-  /* width: 1020px;
-  height: 510px; */
   background-image: url('img/tile.png');
-  /* background-size: cover; */
   position: relative;
 }
 
@@ -34,6 +31,11 @@ body {
 
 .boy-active-light {
   background-image: url('img/pacboy-active-light.png');
+  width: 85px;
+  height: 85px;
+}
+.bad-boy {
+  background-image: url('img/robot.png');
   width: 85px;
   height: 85px;
 }

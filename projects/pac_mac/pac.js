@@ -5,7 +5,7 @@ class Pacman {
         this.score = 0;
         this.positionX = 0;
         this.positionY = 0;
-        this.step = 85; 
+        this.step = grid_size; 
         this.mouthOpen = false;
     }
 
@@ -28,20 +28,18 @@ class Pacman {
                 if(this.positionX < (this.field.width - this.step)){
                     this.positionX += this.step;
                     this.update()
-                    // console.log(this.positionX);
                     this.element.style.backgroundPositionY = 0 + 'px';
                 }
                 break;
             case 'up':
                 if(this.positionY > 0 ){
                     this.positionY -= this.step;
-                    console.log(this.positionY);
                     this.update()
                     this.element.style.backgroundPositionY = this.step + 'px';
                 }
                 break;
             case 'down':
-                if(this.positionY < 425){
+                if(this.positionY < this.field.height - grid_size){
                     this.positionY += this.step;
                     this.update();
                     this.element.style.backgroundPositionY = this.step * 2 + 'px';

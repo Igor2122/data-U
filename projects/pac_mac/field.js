@@ -1,8 +1,8 @@
 class Field {
     constructor(width, height){
-        this.grid_size = 85;
-        this.width = width * this.grid_size;
-        this.height = height * this.grid_size;
+        
+        this.width = width * grid_size;
+        this.height = height * grid_size;
     }
 
     render(){
