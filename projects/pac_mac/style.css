@@ -17,9 +17,10 @@ body {
 }
 
 .field {
-  width: 1020px;
-  height: 510px;
+  /* width: 1020px;
+  height: 510px; */
   background-image: url('img/tile.png');
+  /* background-size: cover; */
   position: relative;
 }
 

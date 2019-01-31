@@ -5,7 +5,7 @@ class Pacman {
         this.score = 0;
         this.positionX = 0;
         this.positionY = 0;
-        this.step = 85;
+        this.step = 85; 
         this.mouthOpen = false;
     }
 
@@ -16,18 +16,19 @@ class Pacman {
         switch (direction) {
 
             case 'left':
-                if(this.positionX > 0){
-                    this.positionX -= this.step;
+                if(this.positionX >  -this.step){
                     this.update();
+                    this.positionX -= this.step;
+                    console.log(this.positionX);
                     this.element.style.backgroundPositionY = this.step * 3 + 'px';
                 }
                 break;
 
             case 'right':
-                if(this.positionX < 935){
+                if(this.positionX < (this.field.width - this.step)){
                     this.positionX += this.step;
-                    console.log();
                     this.update()
+                    // console.log(this.positionX);
                     this.element.style.backgroundPositionY = 0 + 'px';
                 }
                 break;
@@ -63,8 +64,6 @@ class Pacman {
 
     movePacman(event) {
         let x = event.which;
-        console.log(x);
-
         switch (x) {
             case 37:
                 console.log('move left');
