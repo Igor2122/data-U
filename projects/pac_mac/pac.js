@@ -1,57 +1,55 @@
 class Pacman {
-    constructor(name, field) {
+    constructor(name, field, posX, posY) {
         this.name = name;
         this.field = field;
         this.score = 0;
         this.step = grid_size;
         this.mouthOpen = false;
         this.position = {
-            x: 0,
-            y: 0
+            x: posX,
+            y: posY
         }
     }
 
     direction(direction) {
         // updated the current position of the pac
-        this.currentPosition();
 
         this.mouthOpen = !this.mouthOpen;
 
         switch (direction) {
 
-            case 'left':
-                // if (this.position.x > this.step) {;
-                    this.position.x -= this.step;
-                    this.element.style.backgroundPositionY = this.step * 3 + 'px';
-                // }
-                break;
-
             case 'right':
-                if (this.position.x < (this.field.width - this.step)) {
-                    this.position.x += this.step;
-
-                    this.element.style.backgroundPositionY = 0 + 'px';
-                }
+                this.position.x++;
+                this.element.style.backgroundPositionY = 0 + 'px';
+                
                 break;
-            case 'up':
-                // if(this.position.y > 0 ){
-                this.position.y -= this.step;
 
-                this.element.style.backgroundPositionY = this.step + 'px';
-                // }
+            case 'left':
+
+                this.position.x--;
+                this.element.style.backgroundPositionY = this.step * 3 + 'px';
+
                 break;
+
             case 'down':
-                // if(this.position.y < this.field.height - grid_size){
-                this.position.y += this.step;;
+
+                this.position.y++;
                 this.element.style.backgroundPositionY = this.step * 2 + 'px';
-                // }
+
+                break;
+
+            case 'up':
+
+                this.position.y--;
+                this.element.style.backgroundPositionY = this.step + 'px';
+
                 break;
 
             default:
                 break;
         }
-
         this.update();
+
     }
 
 
@@ -66,18 +64,14 @@ class Pacman {
     movePacman(event) {
         let x = event.which;
         switch (x) {
+            case 39:
+                console.log('move right');
+                this.direction('right');
+                break;
+
             case 37:
                 console.log('move left');
                 this.direction('left')
-                break;
-            case 39:
-                console.log('move right');
-                this.direction('right')
-
-                break;
-            case 38:
-                console.log('move up');
-                this.direction('up')
 
                 break;
             case 40:
@@ -85,27 +79,31 @@ class Pacman {
                 this.direction('down')
                 break;
 
+            case 38:
+                console.log('move up');
+                this.direction('up')
+
+                break;
+
             default:
                 break;
         }
-
-
+        this.update();
+        this.currentPosition();
     }
 
     currentPosition() {
-        // this.position.x = this.positionX;
-        // this.position.y = this.positionY;
-
-        // console.log(this.field.badboy.position.x);
         let badG = this.field.badboy.position;
-        console.log(this.position);
+        let pac = this.position;
 
-        
-        if (this.field.badboy.position.x == this.position.x) {
-            console.log('we met')
+        console.log(badG, pac);
+
+        if(badG.x === pac.x) {
+            console.log('we met');
         }
-    }
+        this.update();
 
+    }
 
     update() {
 
@@ -114,12 +112,14 @@ class Pacman {
             this.element.style.backgroundPositionX = this.step + 'px';
         }
 
-        this.element.style.left = this.position.x + 'px';
-        this.element.style.top = this.position.y + 'px';
+        this.element.style.left = this.position.x * grid_size + 'px';
+        this.element.style.top = this.position.y * grid_size + 'px';
 
+        // this.currentPosition();
     }
 
     mount(parent) {
         parent.appendChild(this.render());
+        this.update();
     }
 }

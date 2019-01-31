@@ -22,7 +22,12 @@ class BadBoys {
     }
 
     update() {
-        this.element.style.top = this.position.x + 'px';
-        this.element.style.left = this.position.y + 'px';
+
+        this.element.style.top = this.position.x * grid_size + 'px';
+        this.element.style.left = this.position.y * grid_size + 'px';
+
+
+        // this.element.style.top = this.position.x + 'px';
+        // this.element.style.left = this.position.y + 'px';
     }
 }
