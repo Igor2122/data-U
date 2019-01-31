@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', e => {
   const pacmanIgor = new Pacman('Igor', field);
   pacmanIgor.mount(fieldParent);
 
-  const badboys = new BadBoys ();
+  const badboys = new BadBoys ('Bad Dude');
   badboys.mount(fieldParent);
 
   window.addEventListener('keydown', e => {

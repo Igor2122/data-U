@@ -7,9 +7,16 @@ class Pacman {
         this.positionY = 0;
         this.step = grid_size; 
         this.mouthOpen = false;
+        this.position = {
+            x: 0,
+            y: 0
+        }
     }
 
     direction(direction) {
+        // updated the current position of the pac
+        
+        this.currentPosition();
 
         this.mouthOpen = !this.mouthOpen;
 
@@ -87,6 +94,13 @@ class Pacman {
         }
 
 
+    }
+
+    currentPosition() {
+        this.position.x = this.positionX;
+        this.position.y = this.positionY;
+
+        console.log(this.position.x, this.position.y);
     }
 
 

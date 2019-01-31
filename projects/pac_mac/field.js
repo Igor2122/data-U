@@ -1,6 +1,5 @@
 class Field {
-    constructor(width, height){
-        
+    constructor(width, height){   
         this.width = width * grid_size;
         this.height = height * grid_size;
     }

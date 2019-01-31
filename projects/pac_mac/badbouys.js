@@ -1,9 +1,11 @@
 class BadBoys {
     constructor(name){
         this.name = name;
-        this.positionX = grid_size * 3;
-        this.positionY = grid_size * 2;
-        // this.field = field;
+        this.position = {
+            x: grid_size * 3,
+            y: grid_size * 2
+        }
+        
     }
 
     render() {
@@ -11,10 +13,16 @@ class BadBoys {
         this.element.className = 'pac bad-boy';
         this.element.innerHTML = `${this.name}: ${this.score}`
 
+        this.update();
         return this.element;
     }
 
     mount(parent) {
         parent.appendChild(this.render());
+    }
+
+    update() {
+        this.element.style.top = this.position.x + 'px';
+        this.element.style.left = this.position.y + 'px';
     }
 }
