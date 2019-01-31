@@ -1,6 +1,8 @@
 class Pacman {
-    constructor(name) {
+    constructor(name, field) {
         this.name = name;
+        this.field = field;
+        this.score = 0;
         this.positionX = 0;
         this.positionY = 0;
         this.step = 85;
@@ -54,7 +56,7 @@ class Pacman {
     render() {
         this.element = document.createElement('div');
         this.element.className = 'pac boy-active-light';
-        this.element.innerHTML = `${this.name}`
+        this.element.innerHTML = `${this.name}: ${this.score}`
 
         return this.element;
     }
