@@ -3,9 +3,7 @@ class Pacman {
         this.name = name;
         this.field = field;
         this.score = 0;
-        this.positionX = 0;
-        this.positionY = 0;
-        this.step = grid_size; 
+        this.step = grid_size;
         this.mouthOpen = false;
         this.position = {
             x: 0,
@@ -15,7 +13,6 @@ class Pacman {
 
     direction(direction) {
         // updated the current position of the pac
-        
         this.currentPosition();
 
         this.mouthOpen = !this.mouthOpen;
@@ -23,39 +20,38 @@ class Pacman {
         switch (direction) {
 
             case 'left':
-                if(this.positionX >  -this.step){
-                    this.update();
-                    this.positionX -= this.step;
-                    console.log(this.positionX);
+                // if (this.position.x > this.step) {;
+                    this.position.x -= this.step;
                     this.element.style.backgroundPositionY = this.step * 3 + 'px';
-                }
+                // }
                 break;
 
             case 'right':
-                if(this.positionX < (this.field.width - this.step)){
-                    this.positionX += this.step;
-                    this.update()
+                if (this.position.x < (this.field.width - this.step)) {
+                    this.position.x += this.step;
+
                     this.element.style.backgroundPositionY = 0 + 'px';
                 }
                 break;
             case 'up':
-                if(this.positionY > 0 ){
-                    this.positionY -= this.step;
-                    this.update()
-                    this.element.style.backgroundPositionY = this.step + 'px';
-                }
+                // if(this.position.y > 0 ){
+                this.position.y -= this.step;
+
+                this.element.style.backgroundPositionY = this.step + 'px';
+                // }
                 break;
             case 'down':
-                if(this.positionY < this.field.height - grid_size){
-                    this.positionY += this.step;
-                    this.update();
-                    this.element.style.backgroundPositionY = this.step * 2 + 'px';
-                }
+                // if(this.position.y < this.field.height - grid_size){
+                this.position.y += this.step;;
+                this.element.style.backgroundPositionY = this.step * 2 + 'px';
+                // }
                 break;
 
             default:
                 break;
         }
+
+        this.update();
     }
 
 
@@ -97,10 +93,17 @@ class Pacman {
     }
 
     currentPosition() {
-        this.position.x = this.positionX;
-        this.position.y = this.positionY;
+        // this.position.x = this.positionX;
+        // this.position.y = this.positionY;
 
-        console.log(this.position.x, this.position.y);
+        // console.log(this.field.badboy.position.x);
+        let badG = this.field.badboy.position;
+        console.log(this.position);
+
+        
+        if (this.field.badboy.position.x == this.position.x) {
+            console.log('we met')
+        }
     }
 
 
@@ -111,8 +114,8 @@ class Pacman {
             this.element.style.backgroundPositionX = this.step + 'px';
         }
 
-        this.element.style.left = this.positionX + 'px';
-        this.element.style.top = this.positionY + 'px';
+        this.element.style.left = this.position.x + 'px';
+        this.element.style.top = this.position.y + 'px';
 
     }
 

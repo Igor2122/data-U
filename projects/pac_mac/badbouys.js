@@ -2,8 +2,8 @@ class BadBoys {
     constructor(name){
         this.name = name;
         this.position = {
-            x: grid_size * 3,
-            y: grid_size * 2
+            x: grid_size * 0,
+            y: grid_size * 0
         }
         
     }
