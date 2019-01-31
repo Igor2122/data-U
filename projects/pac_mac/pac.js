@@ -26,13 +26,14 @@ class Pacman {
             case 37:
                 console.log('move left');
                 this.positionX -= this.step;
-                this.update()
+                this.update();
+                this.element.style.backgroundPositionY = this.step * 3 + 'px';
                 break;
             case 39:
                 console.log('move right');
                 this.positionX += this.step;
                 this.update()
-                // this.element.style.backgroundPositionY = this.step + 'px';
+                this.element.style.backgroundPositionY = 0 + 'px';
                 break;
             case 38:
                 console.log('move up');
@@ -55,9 +56,10 @@ class Pacman {
     }
 
     update() {
+
         this.element.style.backgroundPositionX = '0';
         if(this.mouthOpen){
-            this.element.style.backgroundPositionX = '100%';
+            this.element.style.backgroundPositionX = this.step + 'px';
         } 
         this.mouthOpen = !this.mouthOpen;
         
