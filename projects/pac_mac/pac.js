@@ -7,21 +7,34 @@ class Pacman {
         this.mouthOpen = true;
     }
 
-    move(direction) {
-        switch (directions) {
-            case right:
-                
+    direction(direction) {
+
+        this.mouthOpen = !this.mouthOpen;
+
+        switch (direction) {
+
+            case 'left':
+                this.positionX -= this.step;
+                this.update();
+                this.element.style.backgroundPositionY = this.step * 3 + 'px';
                 break;
-            case left:
-                
+
+            case 'right':
+                this.positionX += this.step;
+                this.update()
+                this.element.style.backgroundPositionY = 0 + 'px';
                 break;
-            case up:
-                
+            case 'up':
+                this.positionY -= this.step;
+                this.update()
+                this.element.style.backgroundPositionY = this.step + 'px';
                 break;
-            case down:
-                
+            case 'down':
+                this.positionY += this.step;
+                this.update();
+                this.element.style.backgroundPositionY = this.step * 2 + 'px';
                 break;
-        
+
             default:
                 break;
         }
@@ -43,27 +56,21 @@ class Pacman {
         switch (x) {
             case 37:
                 console.log('move left');
-                this.positionX -= this.step;
-                this.update();
-                this.element.style.backgroundPositionY = this.step * 3 + 'px';
+                this.direction('left')
                 break;
             case 39:
                 console.log('move right');
-                this.positionX += this.step;
-                this.update()
-                this.element.style.backgroundPositionY = 0 + 'px';
+                this.direction('right')
+
                 break;
             case 38:
                 console.log('move up');
-                this.positionY -= this.step;
-                this.update()
-                this.element.style.backgroundPositionY = this.step + 'px';
+                this.direction('up')
+
                 break;
-                case 40:
+            case 40:
                 console.log('move down');
-                this.positionY += this.step;
-                this.update();
-                this.element.style.backgroundPositionY = this.step * 2 + 'px';
+                this.direction('down')
                 break;
 
             default:
@@ -72,22 +79,18 @@ class Pacman {
 
 
     }
-    
-    updateMouth () {
-        this.mouthOpen = !this.mouthOpen;
-    }
-    
+
+
     update() {
-        this.updateMouth();
-        
+
         this.element.style.backgroundPositionX = '0';
-        if(this.mouthOpen){
+        if (this.mouthOpen) {
             this.element.style.backgroundPositionX = this.step + 'px';
-        } 
+        }
 
         this.element.style.left = this.positionX + 'px';
         this.element.style.top = this.positionY + 'px';
-        
+
     }
 
     mount(parent) {
