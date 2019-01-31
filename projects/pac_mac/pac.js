@@ -7,6 +7,26 @@ class Pacman {
         this.mouthOpen = true;
     }
 
+    move(direction) {
+        switch (directions) {
+            case right:
+                
+                break;
+            case left:
+                
+                break;
+            case up:
+                
+                break;
+            case down:
+                
+                break;
+        
+            default:
+                break;
+        }
+    }
+
 
     render() {
         this.element = document.createElement('div');
@@ -17,9 +37,7 @@ class Pacman {
     }
 
     movePacman(event) {
-
         let x = event.which;
-
         console.log(x);
 
         switch (x) {
@@ -54,15 +72,19 @@ class Pacman {
 
 
     }
-
+    
+    updateMouth () {
+        this.mouthOpen = !this.mouthOpen;
+    }
+    
     update() {
-
+        this.updateMouth();
+        
         this.element.style.backgroundPositionX = '0';
         if(this.mouthOpen){
             this.element.style.backgroundPositionX = this.step + 'px';
         } 
-        this.mouthOpen = !this.mouthOpen;
-        
+
         this.element.style.left = this.positionX + 'px';
         this.element.style.top = this.positionY + 'px';
         
