@@ -30,17 +30,22 @@ class Robot {
         <img class="w-25 img head" src="./img/${robotGiven.name.toLowerCase()}.png" alt="local" >
         <span class="badge badge-primary badge-pill">${robotGiven.text}</span>
         `
-        
+
 
         return robotG;
     }
 
-    mount(parent){
-        parent.appendChild(this.render());
-    }
 
     mountKeyPress(parent, array) {
         parent.appendChild(this.renderSingle(array[this.counter]));
         this.counter++;
+    }
+
+    mount(parent) {
+        parent.appendChild(this.render());
+    }
+
+    removeLoaderGif (parent, toBeRemoved) {
+        parent.removeChild(toBeRemoved);
     }
 }
