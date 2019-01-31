@@ -4,7 +4,7 @@ class Pacman {
         this.positionX = 0;
         this.positionY = 0;
         this.step = 85;
-        this.mouthOpen = true;
+        this.mouthOpen = false;
     }
 
     direction(direction) {
@@ -14,25 +14,35 @@ class Pacman {
         switch (direction) {
 
             case 'left':
-                this.positionX -= this.step;
-                this.update();
-                this.element.style.backgroundPositionY = this.step * 3 + 'px';
+                if(this.positionX > 0){
+                    this.positionX -= this.step;
+                    this.update();
+                    this.element.style.backgroundPositionY = this.step * 3 + 'px';
+                }
                 break;
 
             case 'right':
-                this.positionX += this.step;
-                this.update()
-                this.element.style.backgroundPositionY = 0 + 'px';
+                if(this.positionX < 935){
+                    this.positionX += this.step;
+                    console.log();
+                    this.update()
+                    this.element.style.backgroundPositionY = 0 + 'px';
+                }
                 break;
             case 'up':
-                this.positionY -= this.step;
-                this.update()
-                this.element.style.backgroundPositionY = this.step + 'px';
+                if(this.positionY > 0 ){
+                    this.positionY -= this.step;
+                    console.log(this.positionY);
+                    this.update()
+                    this.element.style.backgroundPositionY = this.step + 'px';
+                }
                 break;
             case 'down':
-                this.positionY += this.step;
-                this.update();
-                this.element.style.backgroundPositionY = this.step * 2 + 'px';
+                if(this.positionY < 425){
+                    this.positionY += this.step;
+                    this.update();
+                    this.element.style.backgroundPositionY = this.step * 2 + 'px';
+                }
                 break;
 
             default:

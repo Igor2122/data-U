@@ -28,6 +28,7 @@ body {
   font-weight: bold;
   text-align: center;
   padding-top: 65px;
+  transition: left .2s ease-in, top .2s ease-in;
 }
 
 .boy-active-light {
