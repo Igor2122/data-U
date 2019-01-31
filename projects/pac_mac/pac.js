@@ -1,7 +1,10 @@
 class Pacman {
-    constructor(name, position) {
+    constructor(name) {
         this.name = name;
-        this.position = 0;
+        this.positionX = 0;
+        this.positionY = 0;
+        this.step = 85;
+        this.mouthOpen = true;
     }
 
 
@@ -22,27 +25,45 @@ class Pacman {
         switch (x) {
             case 37:
                 console.log('move left');
-                this.position -= 85;
-                this.element.style.left = this.position + 'px';
+                this.positionX -= this.step;
+                this.update()
                 break;
-                case 39:
+            case 39:
                 console.log('move right');
-                this.position += 85;
-                console.log(this.position);
-                this.element.style.left = this.position + 'px';
+                this.positionX += this.step;
+                this.update()
+                // this.element.style.backgroundPositionY = this.step + 'px';
                 break;
             case 38:
                 console.log('move up');
+                this.positionY -= this.step;
+                this.update()
+                this.element.style.backgroundPositionY = this.step + 'px';
                 break;
-            case 40:
+                case 40:
                 console.log('move down');
+                this.positionY += this.step;
+                this.update();
+                this.element.style.backgroundPositionY = this.step * 2 + 'px';
                 break;
-        
+
             default:
                 break;
         }
 
 
+    }
+
+    update() {
+        this.element.style.backgroundPositionX = '0';
+        if(this.mouthOpen){
+            this.element.style.backgroundPositionX = '100%';
+        } 
+        this.mouthOpen = !this.mouthOpen;
+        
+        this.element.style.left = this.positionX + 'px';
+        this.element.style.top = this.positionY + 'px';
+        
     }
 
     mount(parent) {

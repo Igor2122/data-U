@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded', e => {
   const pacmanIgor = new Pacman('Igor');
   pacmanIgor.mount(fieldParent);
 
-  window.addEventListener('keyup', e => {
+  window.addEventListener('keydown', e => {
     pacmanIgor.movePacman(e);
     
   })
