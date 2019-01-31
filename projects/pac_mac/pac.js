@@ -11,6 +11,14 @@ class Pacman {
         }
     }
 
+    render() {
+        this.element = document.createElement('div');
+        this.element.className = 'pac boy-active-light';
+        this.element.innerHTML = `${this.name}: ${this.score}`
+
+        return this.element;
+    }
+
     direction(direction) {
         // updated the current position of the pac
 
@@ -49,17 +57,8 @@ class Pacman {
                 break;
         }
         this.update();
-
     }
 
-
-    render() {
-        this.element = document.createElement('div');
-        this.element.className = 'pac boy-active-light';
-        this.element.innerHTML = `${this.name}: ${this.score}`
-
-        return this.element;
-    }
 
     movePacman(event) {
         let x = event.which;
@@ -94,15 +93,13 @@ class Pacman {
 
     currentPosition() {
         let badG = this.field.badboy.position;
-        let pac = this.position;
-
-        console.log(badG, pac);
-
-        if(badG.x === pac.x) {
-            console.log('we met');
+        let pac = this.position;        
+        
+        if(badG.x === pac.x && badG.y === pac.y) {
+            this.element.style.background = 'url("./img/tomb.png")';
+            this.field.badboy.changeBackground();
+            console.log(this.field.badboy);
         }
-        this.update();
-
     }
 
     update() {
@@ -114,8 +111,6 @@ class Pacman {
 
         this.element.style.left = this.position.x * grid_size + 'px';
         this.element.style.top = this.position.y * grid_size + 'px';
-
-        // this.currentPosition();
     }
 
     mount(parent) {

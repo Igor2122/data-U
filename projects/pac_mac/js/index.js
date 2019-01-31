@@ -1,8 +1,6 @@
-const grid_size = 85;  
-
 document.addEventListener('DOMContentLoaded', e => {
   
-  const badboys = new BadBoys ('Bad Dude');
+  const badboys = new BadBoys ('Bad Dude', 3, 2);
   const field = new Field(5, 5, badboys);
   const pacmanIgor = new Pacman('Igor', field, 0, 0);
 
@@ -13,7 +11,7 @@ document.addEventListener('DOMContentLoaded', e => {
   const fieldParent = document.querySelector('.field');
   
   pacmanIgor.mount(fieldParent);
-  pacmanIgor.update();
+  
 
   badboys.mount(fieldParent);
 
