@@ -29,6 +29,22 @@
     background: $mian-color;
 }
 
+$skill__cover__opt1: rgba(57, 212, 229, .3);
+$skill__cover__opt2: rgba(226, 246, 213, .4);
+$skill__cover__opt3: rgba(57, 212, 229, .3);
+$skill__cover__opt1: rgba(57, 212, 229, .3);
+
+@mixin project-cover($color) {
+    &:after {
+        position: absolute;
+        z-index: 0;
+        content: '';
+        height: 100%;
+        width: 100%;
+        background: $color;
+    }
+}
+
 @mixin buttons  {
     background: $highlight;
                 padding: .6em;
@@ -45,7 +61,7 @@
                 }
 }
 
-
+// Media Queries
 
 $mobile:  320px;
 $tablet: 480px;

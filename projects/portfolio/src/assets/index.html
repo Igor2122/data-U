@@ -121,42 +121,40 @@
           <img src="./img/svg/technologies/posgres.png" alt="posgres-logo" class="tech-logos skill-four">
           <div class="overlay"></div>
           <div class="content">
-              <h2>Back End</h2>
-              <button class="learn-more">
-                <h3>Learn More</h3>
-              </button>
-            </div>
+            <h2>Back End</h2>
+            <button class="learn-more">
+              <h3>Learn More</h3>
+            </button>
+          </div>
+        </div>
       </div>
-    </div>
-    <div class="skills skills-right">
-      <div>
-        <h2>My Skills</h2>
-        <p>I am really pationate about web development.
-          Love both sides of it, however most of the projects so far included front-end </p>
-        <div class="social-media">
-          <div class="facebook">
-            <i class="fab fa-facebook-f fa-md-2x"></i>
+      <div class="skills skills-right">
+        <div>
+          <h2>My Skills</h2>
+          <p>I am really pationate about web development.
+            Love both sides of it, however most of the projects so far included front-end </p>
+          <div class="social-media">
+            <div class="facebook">
+              <i class="fab fa-facebook-f fa-md-2x"></i>
+            </div>
+            <div class="email">
+              <i class="fas fa-briefcase fa-md-2x"></i>
+            </div>
+            <div class="github">
+              <a href="https://github.com/Igor2122" target="_blank"></a> <i class="fab fa-github fa-md-2x"></i>
+            </div>
+            <div class="instagram">
+              <a href=""></a> <i class="fab fa-instagram fa-md-2x"></i>
+            </div>
           </div>
-          <div class="email">
-            <i class="fas fa-briefcase fa-md-2x"></i>
-          </div>
-          <div class="github">
-            <a href="https://github.com/Igor2122" target="_blank"></a> <i class="fab fa-github fa-md-2x"></i>
-          </div>
-          <div class="instagram">
-            <a href=""></a> <i class="fab fa-instagram fa-md-2x"></i>
-          </div>
+
         </div>
 
       </div>
-
-    </div>
     </div>
 
   </section>
   <!-- SKILL SECTION -->
-
-
 
 
   <!-- PROJECTS SECTION  -->
@@ -164,8 +162,15 @@
     <h2>Projects</h2>
     <div class="projects-parent">
       <div class="projects-container">
-        <div class="project-card"></div>
-        <div class="project-card"></div>
+        <div class="project-card" data-tilt>
+          <a class="github" href="https://github.com/Igor2122" target="_blank"> <i class="fab fa-github fa-md-2x"></i></a>
+          <div class="project-div">
+            <h3>
+              <a href="http://www.chefmarwanslim.com/" target="_blank">Visit the Website</a>
+            </h3>
+          </div>
+        </div>
+        <div class="project-card js-tilt"></div>
         <div class="project-card"></div>
         <div class="project-card"></div>
         <div class="project-card"></div>
@@ -173,7 +178,8 @@
     </div>
   </section>
 
-  <script type="text/javascript" src="./js/vanilla-tilt.js"></script>
+  <script src="./js/jquery.js"></script> <!-- Load jQuery first -->
+  <script src="./js/tilt.jquery.js"></script> <!-- Load Tilt.js library -->
   <script src="./js/app.js"></script>
 </body>
 

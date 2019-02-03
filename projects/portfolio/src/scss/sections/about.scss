@@ -13,13 +13,14 @@
         h2 {
             padding: .5em;
             
-            &::before {
-                content: '';
-                width: 5%;
-                border-top: 1px solid $highlight;
+            &:after {
                 position: absolute;
-                left: 5%;
-                top: 28%;
+            left: .5em;
+            top: .3em;
+            content: '';
+            height: 1em;
+            width: 3em;
+            border-bottom: 1px solid $highlight;
 
             }
         }
