@@ -4,23 +4,8 @@
     position: relative;
 
     &>h2 {
-        // color: black;
-        color: #fff;
-        position: absolute;
-        top: 10%;
+        @include page-name;
         left: -1%;
-        transform: rotate(-90deg);
-        padding-bottom: .5em;
-
-        &:after {
-            position: absolute;
-            left: .5em;
-            top: .3em;
-            content: '';
-            height: 1em;
-            width: 3em;
-            border-bottom: 1px solid $highlight;
-        }
     }
 }
 

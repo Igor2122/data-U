@@ -45,6 +45,25 @@ $skill__cover__opt1: rgba(57, 212, 229, .3);
     }
 }
 
+@mixin page-name {
+color: #fff;
+        position: absolute;
+        top: 8%;
+        left: 0;
+        transform: rotate(-90deg);
+        padding-bottom: .5em;
+
+        &:after {
+            position: absolute;
+            left: 0;
+            top: .3em;
+            content: '';
+            height: 1em;
+            width: 100%;
+            border-bottom: 1px solid $highlight;
+        }
+}
+
 @mixin buttons  {
     background: $highlight;
                 padding: .6em;

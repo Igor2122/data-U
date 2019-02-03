@@ -5,24 +5,13 @@
     background: $mian-color;
     background-image: $background-pattern;
     color: #fff;
+    position: relative;
 
 
     .section-name-div {
-        position: relative;
-        
-        h2 {
-            padding: .5em;
-            
-            &:after {
-                position: absolute;
-            left: .5em;
-            top: .3em;
-            content: '';
-            height: 1em;
-            width: 3em;
-            border-bottom: 1px solid $highlight;
 
-            }
+        h2 {
+            @include page-name;
         }
     }
 

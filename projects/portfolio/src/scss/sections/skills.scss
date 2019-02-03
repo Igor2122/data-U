@@ -17,22 +17,9 @@
     }
 
     &>h2 {
+        @include page-name;
         color: black;
-        position: absolute;
-        top: 10%;
-        left: 5%;
-        transform: rotate(-90deg);
-        padding-bottom: .5em;
-
-        &:after {
-            position: absolute;
-            left: .5em;
-            top: .3em;
-            content: '';
-            height: 1em;
-            width: 3em;
-            border-bottom: 1px solid $highlight;
-        }
+        left: 1%;
     }
 
     @include mobile {
