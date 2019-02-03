@@ -31,9 +31,9 @@ function htmlPublish(done) {
       .pipe(livereload());
 }
 
-function jsPublish(done){
+function jsPublish(done) {
     return gulp.src('src/assets/**/*.js')
-    .pipe(gulp.dest('public'))
+      .pipe(gulp.dest('public'));
 }
 
 // compile SCSS files
@@ -54,8 +54,8 @@ function scssCompile(done) {
 // watch files
 function watchFiles(done) {
     gulp.watch("src/assets/**/*.html", htmlPublish);
+    gulp.watch("src/assets/**/*.js", jsPublish);
     gulp.watch("src/scss/**/*.scss", scssCompile);
-    gulp.watch("src/scss/**/*.js", jsPublish);
 }
 
 // start livereload
